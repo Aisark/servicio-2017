@@ -166,7 +166,7 @@
               <div class="col m5 offset-m1"><span>Dificultad Rompecabezas:</span></div>
               <div class="col m6 valign-wrapper">
                 <p>
-                  <input class="with-gap" name="dif1" type="radio" id="eas1" />
+                  <input class="with-gap" name="dif1" type="radio" id="eas1" checked/>
                   <label for="eas1">Facil</label>
                 </p>
                 <p>
@@ -184,7 +184,7 @@
               <div class="col m5 offset-m1"><span>Dificultad Ecuaciones:</span></div>
               <div class="col m6 valign-wrapper">
                 <p>
-                  <input class="with-gap" name="dif2" type="radio" id="eas2" />
+                  <input class="with-gap" name="dif2" type="radio" id="eas2" checked />
                   <label for="eas2">Facil</label>
                 </p>
                 <p>
@@ -198,17 +198,29 @@
                 <p class="hide"></p>
               </div>
             </div>
-            <div class="row">
-              <div class="col m2 offset-m1"><span>Imagen:</span></div>
+            <div class="row"> <!-- Seleccionar imagen -->
+              <div class="col m4 offset-m1"><span>Seleccionar Imagen:</span></div>
+              <div class="col m6">
+                <div class="file-field input-field">
+                  <div class="btn">
+                    <i class="material-icons">perm_media</i>
+                    <input type="file" accept="image/x-png,image/jpeg">
+                  </div>
+                  <div class="file-path-wrapper">
+                    <input type="text" class="file-path validate">
+                  </div>
+                </div>
+              </div>
             </div>
           </form>
         </div>
       </div>
       <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+        <a class="modal-action modal-close waves-effect waves-green btn-flat" id="canGame">Cancelar</a>
+        <a class="modal-action modal-close waves-effect waves-green btn-flat" id="agreGame">Aceptar</a>
       </div>
     </div>
+    <!-- ++++ ++++++++++++++++++++++++ ++++ -->
 
     <!-- ++++ Scripts ++++ -->
     <script>window.$ = window.jQuery = require('jquery');</script>
