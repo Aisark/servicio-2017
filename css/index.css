@@ -1,3 +1,4 @@
+/* General */
 html{
   width: 100%;
   height: 200%;
@@ -12,6 +13,10 @@ body{
 }
 .col{
   padding: 0px 0px !important;
+}
+.fadeOutRight{
+  -webkit-animation-duration: .5s;
+  -webkit-animation-delay: 0s;
 }
 /*---- Intro ----*/
 #intro{
@@ -186,12 +191,22 @@ body{
 #opcIni [type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:after {
     background-color: #eeff41;
 }
-[type="radio"]:checked+label:after,
-[type="radio"].with-gap:checked+label:before,
-[type="radio"].with-gap:checked+label:after {
+#opcIni [type="radio"]:checked+label:after,
+#opcIni [type="radio"].with-gap:checked+label:before,
+#opcIni [type="radio"].with-gap:checked+label:after {
     border: 2px solid #eeff41;
 }
-
+#opcIni .file-field .btn {
+    float: left;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    margin-top: .5em;
+    padding: 0 1em;
+}
+#opcIni .file-field [type="text"] {
+  border-bottom: 1px solid #eeff41;
+  color: white;
+}
 
 
 
