@@ -15,8 +15,16 @@ noUiSlider.create(slider, {
   format: wNumb({decimals: 0})
 })
 
+function openMenu() {
+  Materialize.showStaggeredList('#menuButtons');
+  setTimeout(function () {
+    $('#menuButtons').removeClass('hide')
+  },100)
+}
 
 $(document).ready(function(){
+  var animatedName = 'animated fadeOutRight'
+  var animatedOne = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend'
 
   $('.parallax').parallax();
   $('.scrollspy').scrollSpy({scrollOffset:0});
@@ -27,10 +35,7 @@ $(document).ready(function(){
     endingTop: '15%',
     outDuration: 300,
     complete: function () {
-      Materialize.showStaggeredList('#menuButtons');
-      setTimeout(function () {
-        $('#menuButtons').removeClass('hide')
-      },100)
+      openMenu()
     }
   });
   $('#configs').modal({
@@ -43,7 +48,8 @@ $(document).ready(function(){
     dismissible:false,
     opacity: .2,
     endingTop: '15%',
-    outDuration: 300
+    inDuration:200,
+    outDuration: 200
   })
 
   //Abrir modals dinamicamente
@@ -57,10 +63,14 @@ $(document).ready(function(){
       $('#configs').modal('open');
     },200)
   })
+
+  //Abrir el modal de Opciones iniciales del juego
   $('#iniGame').on('click',function () {
-    setTimeout(function () {
+    $('#menuButtons > li >a').addClass(animatedName).one( animatedOne , function () {
+      $('#menuButtons').addClass('hide')
+      $('#menuButtons > li >a').removeClass(animatedName)
       $('#opcIni').modal('open');
-    },200)
+    });
   })
 
   //Cerrar modals dinamicamente
@@ -70,18 +80,21 @@ $(document).ready(function(){
   $('#closeConfig').on('click',function () {
     $('#configs').modal('close');
   });
+  $('#canGame').on('click',function () {
+    $('#opcIni').modal('close')
+    openMenu()
+  })
 
   //Iniciar juego principal
-  /*
-  $('#iniGame').on('click',function () {
+  $('#agreGame').on('click',function () {
     var linkUrl = url.format({
         pathname: path.join(__dirname,'../templates/main.html'),
         protocol: 'file:',
         slashes: true
       })
-
+      $('#opcIni').modal('close');
       ipcRenderer.send('load-page', linkUrl)
-  })*/
+  })
 
   //Cerrar aplicación
   $('#closeGame').on('click',function () {
