@@ -17,8 +17,9 @@
     <div class="row" id="intro">
       <div class="parallax-container">
         <div class="center">
-          <h2 id="banner"class="animated infinite pulse">Presiona para iniciar</h2>
-          <a href='#sesion' class="btn waves-effect white grey-text darken-text-2" id="iniciar">Iniciar</a>
+          <h2 id="banner"class="animated infinite pulse">Cargando</h2>
+          <div class="progress"><div class="indeterminate"></div></div>
+          <a href='#sesion' class="btn deep-orange accent-3 waves-effect white-text white-text-2 hide disabled"  id="iniciar">Iniciar</a>
         </div>
         <div class="parallax"><img src="../img/fondos/school.jpg"></div>
       </div>
@@ -135,7 +136,7 @@
               <div class="col m10 offset-m1">
                 <div class="switch">
                   <span>Efectos de Sonido </span>
-                  <label>Off <input type="checkbox" checked><span class="lever"></span> On</label>
+                  <label>Off <input id="effSound" type="checkbox" checked><span class="lever"></span> On</label>
                 </div>
               </div>
             </div>
@@ -166,15 +167,15 @@
               <div class="col m5 offset-m1"><span>Dificultad Rompecabezas:</span></div>
               <div class="col m6 valign-wrapper">
                 <p>
-                  <input class="with-gap" name="dif1" type="radio" id="eas1" checked/>
+                  <input class="with-gap" name="dif1" type="radio" id="eas1" checked value="1"/>
                   <label for="eas1">Facil</label>
                 </p>
                 <p>
-                  <input class="with-gap" name="dif1" type="radio" id="med1" />
+                  <input class="with-gap" name="dif1" type="radio" id="med1" value="2"/>
                   <label for="med1">Medio</label>
                 </p>
                 <p>
-                  <input class="with-gap" name="dif1" type="radio" id="hard1" />
+                  <input class="with-gap" name="dif1" type="radio" id="hard1" value="3" />
                   <label for="hard1">Dificil</label>
                 </p>
                 <p class="hide"></p>
@@ -184,15 +185,15 @@
               <div class="col m5 offset-m1"><span>Dificultad Ecuaciones:</span></div>
               <div class="col m6 valign-wrapper">
                 <p>
-                  <input class="with-gap" name="dif2" type="radio" id="eas2" checked />
+                  <input class="with-gap" name="dif2" type="radio" id="eas2" checked value="1"/>
                   <label for="eas2">Facil</label>
                 </p>
                 <p>
-                  <input class="with-gap" name="dif2" type="radio" id="med2" />
+                  <input class="with-gap" name="dif2" type="radio" id="med2" value="2"/>
                   <label for="med2">Medio</label>
                 </p>
                 <p>
-                  <input class="with-gap" name="dif2" type="radio" id="hard2" />
+                  <input class="with-gap" name="dif2" type="radio" id="hard2" value="3"/>
                   <label for="hard2">Dificil</label>
                 </p>
                 <p class="hide"></p>
@@ -204,7 +205,7 @@
                 <div class="file-field input-field">
                   <div class="btn">
                     <i class="material-icons">perm_media</i>
-                    <input type="file" accept="image/x-png,image/jpeg">
+                    <input type="file" id="urlimg" accept="image/x-png,image/jpeg">
                   </div>
                   <div class="file-path-wrapper">
                     <input type="text" class="file-path validate">
@@ -227,6 +228,7 @@
     <script>window.$.Velocity=window.jQuery.Velocity=require("materialize-css/js/velocity.min.js");</script>
     <script>require('../materialize/js/materialize.min.js')</script>
     <script>require('../noUiSlider/nouislider.min.js')</script>
-    <script>require('../js/intro-init.js')</script>
+    <script>require('../js/indexInit.js')</script>
+    <script>require('../js/configInit.js')</script>
   </body>
 </html>
