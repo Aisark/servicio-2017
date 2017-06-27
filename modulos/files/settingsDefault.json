@@ -8,5 +8,7 @@
     "lastName": "",
     "userName": ""
   },
-  "level" : 1
+  "lvlPuzz" : 1,
+  "lvlEcua" : 1,
+  "urlImg" : ""
 }
