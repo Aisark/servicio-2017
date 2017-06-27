@@ -2,18 +2,6 @@ const {ipcRenderer} = require('electron')
 const remote = require('electron').remote
 const path = require('path')
 const url = require('url')
-const noUiSlider = require('../noUiSlider/nouislider.min.js')
-const wNumb = require('../noUiSlider/wNumb.js')
-
-var slider = document.getElementById('volRange');
-
-noUiSlider.create(slider, {
-  start: 100,
-  connect: [true,false],
-  step: 1,
-  range: {'min': 0 , 'max': 10},
-  format: wNumb({decimals: 0})
-})
 
 function openMenu() {
   Materialize.showStaggeredList('#menuButtons');
@@ -21,10 +9,16 @@ function openMenu() {
     $('#menuButtons').removeClass('hide')
   },100)
 }
+function openModal(mod,time) {
+  setTimeout(function () {
+    $('#'+mod).modal('open')
+  },time)
+}
 
 $(document).ready(function(){
   var animatedName = 'animated fadeOutRight'
   var animatedOne = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend'
+
 
   $('.parallax').parallax();
   $('.scrollspy').scrollSpy({scrollOffset:0});
@@ -54,14 +48,10 @@ $(document).ready(function(){
 
   //Abrir modals dinamicamente
   $('#iniciar').on('click',function () {
-    setTimeout(function () {
-      $('#registro').modal('open');
-    },320)
+    openModal('registro',320)
   });
   $('#openConfig').on('click',function () {
-    setTimeout(function () {
-      $('#configs').modal('open');
-    },200)
+    openModal('configs',200)
   })
 
   //Abrir el modal de Opciones iniciales del juego
