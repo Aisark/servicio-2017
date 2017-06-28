@@ -3,12 +3,34 @@ const remote = require('electron').remote
 const path = require('path')
 const url = require('url')
 
+/**
+ * @summary Open Menu principal
+ * @function
+ * @private
+ *
+ * @description
+ * Abre el menu con un efecto de animación, y lo pone visible en el screen
+ *
+*/
 function openMenu() {
   Materialize.showStaggeredList('#menuButtons');
   setTimeout(function () {
     $('#menuButtons').removeClass('hide')
   },100)
 }
+
+/**
+ * @summary Open Modal
+ * @function
+ * @private
+ *
+ * @description
+ * Abre un modal con el identificador con el que fue creado y lo habre
+ * con un delay personalizado
+ *
+ * @param {mod} Cadena de texto
+ * @param {time} Numero de tipo entero
+*/
 function openModal(mod,time) {
   setTimeout(function () {
     $('#'+mod).modal('open')
