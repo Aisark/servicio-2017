@@ -1,6 +1,7 @@
 const noUiSlider = require('../noUiSlider/nouislider.min.js')
 const wNumb = require('../noUiSlider/wNumb.js')
 const config = require('../modulos/config.js')
+const db = require('../js/ScriptsDB/database.js')
 
 var slider = document.getElementById('volRange')
 
@@ -37,8 +38,6 @@ noUiSlider.create(slider, {
  **/
 function loadObject() {
   config.getOBjc().then(function (data) {
-    console.log('promise');
-    console.log(data);
     $('#banner').text('Presiona para iniciar')
     $('.progress').addClass('hide')
     $('#iniciar').removeClass('hide disabled')
@@ -47,6 +46,18 @@ function loadObject() {
 
 $(document).ready(function () {
   loadObject()
+})
+
+$('#subSesion').on('click',function () {
+  var user = $('#usuario').val()
+      pw = $('#pasww').val()
+
+  db.getUser(user).then(function (data) {
+    alert(data.USERNAME+' Bienvenido')
+  })
+  .catch(function (err) {
+    alert(user+' No existe')
+  })
 })
 
 /**
