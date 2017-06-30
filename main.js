@@ -11,7 +11,6 @@ const setSett = require('./modulos/setSettings.js');
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
-
 function createWindow (width,height) {
 
   //Si el OS es Windows, Crea una ventana sin marco
@@ -29,9 +28,9 @@ function createWindow (width,height) {
   //maximiza la ventana
   win.setResizable(false);
 
-  win.once('ready-to-show', () => {
-    win.show()
-  })
+  /*win.once('ready-to-show', () => {
+    //win.show()
+  })*/
   //win.setMenu(null); Quita el menu por default
 
   // and load the index.html of the app.
@@ -54,14 +53,39 @@ function createWindow (width,height) {
   })
 }
 
+let loadwin
+function loadWindow() {
+  loadwin = new BrowserWindow({
+    parent:win,
+    width: 800,
+    height: 600,
+    autoHideMenuBar:true,
+    show: false
+  })
+
+  loadwin.once('ready-to-show',()=>{
+    loadwin.show()
+  })
+
+  loadwin.loadURL(url.format({
+    //__dirname: direccion completa de la carpeta del projecto ejem: /home/aisark/Escritorio/servicio-2017
+    pathname: path.join(__dirname, 'templates/login.html'),//<----- ruta de los archivos html
+    protocol: 'file:',
+    slashes: true
+  }))
+
+  loadwin.on('closed',() =>{
+    loadwin = null
+  })
+}
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', ()=>{
+  loadWindow()
   setSett()
   const {width, height} = electron.screen.getPrimaryDisplay().workAreaSize;
   createWindow(width, height)
-
 })
 
 // Quit when all windows are closed.
@@ -73,19 +97,16 @@ app.on('window-all-closed', () => {
   }
 })
 
-app.on('activate', () => {
-  // On macOS it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
-  if (win === null) {
-    createWindow()
-  }
-})
-
-
 //Enviar mensaje
 
 ipcMain.on('load-page', (event,arg) =>{
   win.loadURL(arg)
 })
 
+ipcMain.on('show-window', (event,arg)=>{
+  loadwin.close()
+  setTimeout(function () {
+    win.show()
+  },500)
+})
 //--------------------

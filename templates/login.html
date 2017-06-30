@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <link href="../materialize/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <style media="screen">
+      .s12 {
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <h4>Login soon</h4>
+    <div class="row">
+      <ul id="tabs-swipe-demo" class="tabs">
+        <li class="tab col s3"><a href="#test-swipe-1">Test 1</a></li>
+        <li class="tab col s3"><a class="active" href="#test-swipe-2">Test 2</a></li>
+        <li class="tab col s3"><a href="#test-swipe-3">Test 3</a></li>
+      </ul>
+      <div id="test-swipe-1" class="col s12 blue">Test 1 <br>
+          <a class="btn deep-orange accent-3 waves-effect white-text white-text-2"  id="iniciar">Iniciar</a>
+      </div>
+      <div id="test-swipe-2" class="col s12 red">Test 2</div>
+      <div id="test-swipe-3" class="col s12 green">Test 3</div>
+    </div>
+
+
+
+
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script>window.$.Velocity=window.jQuery.Velocity=require("materialize-css/js/velocity.min.js");</script>
+    <script>require('../materialize/js/materialize.min.js')</script>
+    <script type="text/javascript">
+      const {ipcRenderer} = require('electron')
+      $('#iniciar').on('click',function () {
+        ipcRenderer.send('show-window','holi')
+      })
+
+      $(document).ready(function () {
+        $('ul.tabs').tabs({
+          swipeable: true
+        });
+      })
+    </script>
+  </body>
+</html>
