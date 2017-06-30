@@ -1,3 +1,4 @@
+
 -- Estructura de la tabla 'MAESTROS' en BD 'Users'
 CREATE TABLE MAESTROS
   (NOMBRE VARCHAR(30),
