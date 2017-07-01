@@ -1,5 +1,5 @@
-const res = require('../js/resolucion.js');
-const puzzle = require('../js/rompecabezas.js')
+const res = require('../js/Equations/resolucion.js');
+const puzzle = require('../js/Canvas/rompecabezas.js')
 
 var _siguiente =  document.getElementById('siguiente')
 var _tips = document.getElementById('tips')

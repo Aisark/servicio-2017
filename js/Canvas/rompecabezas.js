@@ -1,5 +1,5 @@
-const res = require('../js/resolucion.js');
-const confeti = require('../js/confeti.js');
+const res = require('../js/Equations/resolucion.js');
+const confeti = require('../js/Canvas/confeti.js');
 const PUZZLE_DIFFICULTY = 2
 const PUZZLE_HOVER_TINT = '#378A37';
 

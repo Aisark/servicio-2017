@@ -1,4 +1,4 @@
-const res = require('../js/resolucion.js');
+const res = require('../js/Equations/resolucion.js');
 
 var _func = document.getElementById('solFun')
 var _sumTer = document.getElementById('solTerSem')

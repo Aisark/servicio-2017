@@ -1,6 +1,6 @@
-const btn = require('../js/btn.js');
-const proceso = require('../js/procSolucion');
-const pasos = require('../js/pasos.js');
+const btn = require('../js/Events/btn.js');
+const proceso = require('../js/Equations/procSolucion');
+const pasos = require('../js/Equations/pasos.js');
 
 $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered

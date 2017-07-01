@@ -1,4 +1,4 @@
-const ecuacion = require('../js/funciones.js');
+const ecuacion = require('../js/Equations/funciones.js');
 
 var _terminos = {
   errors : 0,
