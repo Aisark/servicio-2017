@@ -104,4 +104,21 @@
   text-shadow: .1em .1em 0.2em rgba(0, 0, 0,1);
 }
 
+
+/* Fuentes de letras Login */
+@media only screen and (min-width: 601px){
+  #tabsSwipe li a{
+    font-size: .32em !important;
+  }
+}
+#tabsSwipe li{
+  font-size: 4em;
+  font-family:  'GoldenRatio';
+}
+li .active{
+  color: white !important;
+  text-shadow: 0.1em 0.1em 0.2em rgba(41, 39, 39, 1);
+}
+
+
 /**/
