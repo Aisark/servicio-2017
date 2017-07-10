@@ -2,6 +2,7 @@
 html,body{
   height: 100%;
   width: 100%;
+  background-color: #5ebef4;
 }
 .row{
   margin-bottom: 0px;
@@ -9,7 +10,12 @@ html,body{
 .col{
   padding: 0px 0px !important;
 }
-
+.uppercase{
+  text-transform: uppercase;
+}
+.desabilitado{
+  pointer-events: none;
+}
 
 /*++++ Tabs Swipe ++++*/
 #btnCR{height: 10%;}

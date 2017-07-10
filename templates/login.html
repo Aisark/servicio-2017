@@ -15,14 +15,14 @@
         <div class="nav-wrapper redBack">
           <ul class="right">
             <li><a id="minimizar"><i class="material-icons">remove</i></a></li>
-            <li><a id="reload"><i class="material-icons">refresh</i></a></li>
+            <li class="hide"><a id="reload"><i class="material-icons">refresh</i></a></li>
             <li><a id="closeBrows"><i class="material-icons">close</i></a></li>
           </ul>
         </div>
       </nav>
     </div>
 
-    <div class="row nav-content" id="tabs">
+    <div class="row nav-content habilitado" id="tabs">
       <ul id="tabsSwipe" class="tabs light-blue darken-2 white-text redBack">
         <li class="tab col s4 redBack"><a class="active" href="#tabStudents">Alumnos</a></li>
         <li class="tab col s4 redBack"><a href="#tabTeacher">Maestros</a></li>
@@ -51,8 +51,8 @@
                     <div class="row">
                       <div class="input-field col m12">
                         <i class="material-icons prefix">lock_outline</i>
-                        <input type="text" class="validate" id="passStu">
-                        <label for="passStu">Contraseña</label>
+                        <input minlength="8" maxlength="15" type="password" class="validate" id="passStu">
+                        <label data-error="incompleto" for="passStu">Contraseña</label>
                       </div>
                     </div>
                   </form>
@@ -88,8 +88,8 @@
                     <div class="row">
                       <div class="input-field col m12">
                         <i class="material-icons prefix">lock_outline</i>
-                        <input type="text" class="validate" id="passTeach">
-                        <label for="passTeach">Contraseña</label>
+                        <input minlength="8" maxlength="15" type="password" class="validate" id="passTeach">
+                        <label data-error="incompleto" for="passTeach">Contraseña</label>
                       </div>
                     </div>
                   </form>
@@ -115,18 +115,18 @@
               <div class="card-content">
                 <div class="row">
                   <form class="col m12">
-                    <div class="row">
+                    <div class="row" id="namesSign">
                       <div class="col m4 input-field">
                         <i class="material-icons prefix">person</i>
-                        <input type="text" class="validate" id="nameUs">
+                        <input type="text" class="validate uppercase" id="nameUs">
                         <label for="nameUs">Nombre</label>
                       </div>
                       <div class="col m4 input-field">
-                        <input type="text" class="validate" id="appUs">
+                        <input type="text" class="validate uppercase" id="appUs">
                         <label for="appUs">Apellido Paterno</label>
                       </div>
                       <div class="col m4 input-field">
-                        <input type="text" class="validate" id="apmUs">
+                        <input type="text" class="validate uppercase" id="apmUs">
                         <label for="apmUs">Apellido Materno</label>
                       </div>
                     </div>
@@ -138,12 +138,12 @@
                       </div>
                       <div class="col m4 input-field">
                         <i class="material-icons prefix">lock_outline</i>
-                        <input type="text" class="validate" id="passUs">
-                        <label for="passUs">Contraseña</label>
+                        <input minlength="8" maxlength="15" type="password" class="validate" id="passUs">
+                        <label data-error="incompleto" for="passUs">Contraseña</label>
                       </div>
                       <div class="col m4 input-field">
-                        <input type="text" class="validate" id="cpassUs">
-                        <label for="cpassUs">Confirmar Contraseña</label>
+                        <input minlength="8" maxlength="15" type="password" class="validate" id="cpassUs">
+                        <label data-error="incompleto" for="cpassUs">Confirmar Contraseña</label>
                       </div>
                     </div>
                     <div class="row">
@@ -152,23 +152,23 @@
                       </div>
                       <div class="col m2">
                         <p>
-                          <input name="sexo" type="radio" id="hom" checked/>
+                          <input value="H" name="sexo" type="radio" id="hom" checked/>
                           <label for="hom">Hombre</label>
                         </p>
                         <p>
-                          <input name="sexo" type="radio" id="muj" />
+                          <input value="M" name="sexo" type="radio" id="muj" />
                           <label for="muj">Mujer</label>
                         </p>
                       </div>
                       <div class="input-field col m3">
                         <select id="selMaes">
-                          <option value="" disabled selected>Maestro</option>
+                          <option value="" disabled selected>Elegir opciones ...</option>
                         </select>
                         <label>Maestro</label>
                       </div>
                       <div class="col m3 input-field">
                         <i class="material-icons prefix">enhanced_encryption</i>
-                        <input type="text" class="validate" id="codConf">
+                        <input disabled type="text" class="validate" id="codConf">
                         <label for="codConf">Num. Control</label>
                       </div>
                       <div class="col m1">
@@ -176,11 +176,11 @@
                       </div>
                       <div class="col m2">
                         <p>
-                          <input value="alumno" name="tipoUser" type="radio" id="alumno" checked/>
+                          <input value="ALUMNOS" name="tipoUser" type="radio" id="alumno" checked/>
                           <label for="alumno">Alumno</label>
                         </p>
                         <p>
-                          <input value="maestro" name="tipoUser" type="radio" id="maestro"/>
+                          <input value="MAESTROS" name="tipoUser" type="radio" id="maestro"/>
                           <label for="maestro">Maestros</label>
                         </p>
                       </div>
@@ -190,7 +190,7 @@
               </div>
               <div class="card-action">
                 <div class="center">
-                  <a>Registrarse</a>
+                  <a id="sendSign">Registrarse</a>
                 </div>
               </div>
             </div>
@@ -204,7 +204,8 @@
     <script>require('../materialize/js/materialize.min.js')</script>
     <script>require('../js/renderProcess/render.js')</script>
     <script>require('../js/Events/initLog.js')</script>
-    <script>const db = require('../js/ScriptsDB/database.js');</script>
+    <script></script>
     <script>require('../js/ScriptsDB/login.js')</script>
+    <script>require('../js/ScriptsDB/signUp.js')</script>
   </body>
 </html>
