@@ -1,7 +1,6 @@
-const noUiSlider = require('../noUiSlider/nouislider.min.js')
-const wNumb = require('../noUiSlider/wNumb.js')
-const config = require('../modulos/config.js')
-const db = require('../js/ScriptsDB/database.js')
+//const noUiSlider = require('../noUiSlider/nouislider.min.js')
+//const wNumb = require('../noUiSlider/wNumb.js')
+
 
 var slider = document.getElementById('volRange')
 
@@ -46,18 +45,6 @@ function loadObject() {
 
 $(document).ready(function () {
   loadObject()
-})
-
-$('#subSesion').on('click',function () {
-  var user = $('#usuario').val()
-      pw = $('#pasww').val()
-
-  db.getUser(user).then(function (data) {
-    alert(data.USERNAME+' Bienvenido')
-  })
-  .catch(function (err) {
-    alert(user+' No existe')
-  })
 })
 
 /**

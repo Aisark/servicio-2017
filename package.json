@@ -18,7 +18,7 @@
   "scripts": {
     "start": "electron .",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
-    "package-win": "electron-packager . Quix --overwrite --icon=icon/512x512.ico --platform=win32 --arch=ia32 --asar=true --out=Quix-release-build",
+    "package-win": "electron-packager . Quix --overwrite --icon=icon/512x512.ico --asar=true --platform=win32 --arch=ia32 --out=Quix-release-build",
     "package-linux": "electron-packager . --overwrite --platform=linux --arch=x64 --icon=icons/1024x1024.png --prune=true --out=release-builds"
   },
   "repository": {
