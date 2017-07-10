@@ -227,7 +227,11 @@
     <script>window.$ = window.jQuery = require('jquery');</script>
     <script>window.$.Velocity=window.jQuery.Velocity=require("materialize-css/js/velocity.min.js");</script>
     <script>require('../materialize/js/materialize.min.js')</script>
-    <script>require('../noUiSlider/nouislider.min.js')</script>
+    <script>
+      const noUiSlider = require('../noUiSlider/nouislider.min.js')
+      const wNumb = require('../noUiSlider/wNumb.js')
+      const config = require('../modulos/config.js')
+    </script>
     <script>require('../js/Events/indexInit.js')</script>
     <script>require('../js/Events/configInit.js')</script>
   </body>

@@ -1,4 +1,3 @@
-const {ipcRenderer} = require('electron')
 const remote = require('electron').remote
 
 const closeBrows = document.getElementById('closeBrows')

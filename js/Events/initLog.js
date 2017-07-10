@@ -3,7 +3,6 @@ $(document).ready(function () {
   $('ul.tabs').tabs({
     swipeable:true
   })
-  $('select').material_select();
   //Mostrar tab Registro
   $('.regUser').on('click',function () {
     $('ul.tabs').tabs('select_tab', 'tabSingUp');
@@ -11,7 +10,7 @@ $(document).ready(function () {
 
   $('input:radio[name=tipoUser]').on('click',function () {
     var tipo = $(this).val()
-    if(tipo=='alumno'){
+    if(tipo=='ALUMNOS'){
       $('input[name=sexo]').prop('disabled',false)
       $('#selMaes').prop('disabled',false)
       $('label[for=codConf]').text('Num. Control')
