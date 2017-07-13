@@ -1,6 +1,6 @@
-//const noUiSlider = require('../noUiSlider/nouislider.min.js')
-//const wNumb = require('../noUiSlider/wNumb.js')
-
+const noUiSlider = require('../../noUiSlider/nouislider.min.js')
+const wNumb = require('../../noUiSlider/wNumb.js')
+const config = require('../../modulos/config.js')
 
 var slider = document.getElementById('volRange')
 
@@ -17,11 +17,11 @@ var slider = document.getElementById('volRange')
  * @param {object} Objecto html
  **/
 noUiSlider.create(slider, {
-  start: 100,
-  connect: [true,false],
-  step: 1,
-  range: {'min': 0 , 'max': 10},
-  format: wNumb({decimals: 0})
+    start: 100,
+    connect: [true, false],
+    step: 1,
+    range: { 'min': 0, 'max': 10 },
+    format: wNumb({ decimals: 0 })
 })
 
 /**
@@ -36,15 +36,15 @@ noUiSlider.create(slider, {
  *
  **/
 function loadObject() {
-  config.getOBjc().then(function (data) {
-    $('#banner').text('Presiona para iniciar')
-    $('.progress').addClass('hide')
-    $('#iniciar').removeClass('hide disabled')
-  })
+    config.getOBjc().then(function(data) {
+        $('#banner').text('Presiona para iniciar')
+        $('.progress').addClass('hide')
+        $('#iniciar').removeClass('hide disabled')
+    })
 }
 
-$(document).ready(function () {
-  loadObject()
+$(document).ready(function() {
+    loadObject()
 })
 
 /**
@@ -59,12 +59,12 @@ $(document).ready(function () {
  * @param {click} event
  * @param {callback} Funcion a ejecutar
  **/
-$('#closeConfig').on('click',function () {
-  var vol = slider.noUiSlider.get(),
-      effec = $('#effSound').prop('checked')
+$('#closeConfig').on('click', function() {
+    var vol = slider.noUiSlider.get(),
+        effec = $('#effSound').prop('checked')
 
-  config.setItemObject(vol,"volEffects")
-  config.setItemObject(effec,"stateEffects")
+    config.setItemObject(vol, "volEffects")
+    config.setItemObject(effec, "stateEffects")
 })
 
 /**
@@ -79,18 +79,18 @@ $('#closeConfig').on('click',function () {
  * @param {click} event
  * @param {callback} Funcion a ejecutar
  **/
-$('#agreGame').on('click',function () {
-  var nPuzz = $('input:radio[name=dif1]:checked').val(),
-      nEcua = $('input:radio[name=dif2]:checked').val(),
-      urlImg = document.getElementById('urlimg').files[0].path
+$('#agreGame').on('click', function() {
+    var nPuzz = $('input:radio[name=dif1]:checked').val(),
+        nEcua = $('input:radio[name=dif2]:checked').val(),
+        urlImg = document.getElementById('urlimg').files[0].path
 
-  config.setItemObject(nPuzz,'lvlPuzz')
-  config.setItemObject(nEcua,'lvlEcua')
-  config.setItemObject(urlImg,'urlImg')
+    config.setItemObject(nPuzz, 'lvlPuzz')
+    config.setItemObject(nEcua, 'lvlEcua')
+    config.setItemObject(urlImg, 'urlImg')
 
-  config.setObject().catch(function (error) {
-    console.log(error);
-  })
+    config.setObject().catch(function(error) {
+        console.log(error);
+    })
 })
 
 //

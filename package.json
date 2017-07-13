@@ -1,35 +1,36 @@
 {
-  "name": "puzzle",
-  "productName": "Quix",
-  "version": "0.1.0",
-  "main": "main.js",
-  "devDependencies": {
-    "electron": "^1.6.2",
-    "electron-packager": "^8.5.2",
-    "electron-rebuild": "^1.5.11"
-  },
-  "dependencies": {
-    "electron-json-storage": "^3.0.5",
-    "electron-storage": "^1.0.7",
-    "jquery": "2.2.4",
-    "materialize-css": "^0.98.2",
-    "sqlite3": "^3.1.8"
-  },
-  "scripts": {
-    "start": "electron .",
-    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
-    "package-win": "electron-packager . Quix --overwrite --icon=icon/512x512.ico --asar=true --platform=win32 --arch=ia32 --out=Quix-release-build",
-    "package-linux": "electron-packager . --overwrite --platform=linux --arch=x64 --icon=icons/1024x1024.png --prune=true --out=release-builds"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DarkSylar117/servicio-2017.git"
-  },
-  "author": "aisark",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/DarkSylar117/servicio-2017/issues"
-  },
-  "homepage": "https://github.com/DarkSylar117/servicio-2017#readme",
-  "description": ""
+    "name": "puzzle",
+    "productName": "Quix",
+    "version": "0.1.0",
+    "main": "main.js",
+    "devDependencies": {
+        "copy": "^0.3.0",
+        "electron": "^1.6.2",
+        "electron-packager": "^8.5.2",
+        "electron-rebuild": "^1.5.11"
+    },
+    "dependencies": {
+        "electron-json-storage": "^3.0.5",
+        "electron-storage": "^1.0.7",
+        "jquery": "2.2.4",
+        "materialize-css": "^0.98.2",
+        "sqlite3": "^3.1.8"
+    },
+    "scripts": {
+        "pack-app-win": "node package-win.js",
+        "start": "electron .",
+        "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+        "package-linux": "electron-packager . --overwrite --platform=linux --arch=x64 --icon=icons/1024x1024.png --prune=true --out=release-builds"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DarkSylar117/servicio-2017.git"
+    },
+    "author": "aisark",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/DarkSylar117/servicio-2017/issues"
+    },
+    "homepage": "https://github.com/DarkSylar117/servicio-2017#readme",
+    "description": ""
 }

@@ -1,5 +1,6 @@
 const packager = require('electron-packager')
 const rebuild = require('electron-rebuild')
+const copy = require('copy')
 
 var options = {
     arch: 'ia32',
@@ -15,7 +16,7 @@ var options = {
     electronVersion: '1.6.2'
 }
 
-packager(options,function done_callback (err, appPaths){
-  if(err)console.log(err);
-  console.log(appPaths);
+packager(options, function done_callback(err, appPaths) {
+    if (err) console.log(err);
+    console.log(appPaths);
 })
