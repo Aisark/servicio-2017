@@ -91,7 +91,7 @@ $(document).ready(function() {
     //Iniciar juego principal
     $('#agreGame').on('click', function() {
         var linkUrl = url.format({
-            pathname: path.join(__dirname, '../templates/main.html'),
+            pathname: path.join(__dirname, '../../templates/main.html'),
             protocol: 'file:',
             slashes: true
         })
