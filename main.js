@@ -74,8 +74,8 @@ app.on('ready', () => {
     }).catch(function(err) {
         console.log(err);
     })
-    logwindow()
     setSett()
+    logwindow()
     const { width, height } = electron.screen.getPrimaryDisplay().workAreaSize;
     createWindow(width, height)
 })
@@ -88,7 +88,13 @@ app.on('window-all-closed', () => {
 
 //Enviar mensaje
 ipcMain.on('load-page', (event, arg) => {
+    win.hide()
     win.loadURL(arg)
+    win.webContents.on('did-finish-load', function() {
+        setTimeout(function() {
+            win.show()
+        }, 3000)
+    })
 })
 
 ipcMain.on('show-window', (event, arg) => {
