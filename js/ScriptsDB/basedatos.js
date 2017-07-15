@@ -19,7 +19,7 @@ const tabAlum = `CREATE TABLE ALUMNOS(
 exports.getUser = function(user, tipo) {
     return new Promise(function(resolve, reject) {
         db.parallelize(function() {
-            var query = util.format("select PWORD from %s where USERNAME='%s'", tipo, user)
+            var query = util.format("select PWORD,NOMBRE,AP_PAT from %s where USERNAME='%s'", tipo, user)
             db.get(query, function(err, data) {
                 if (err || data == undefined) reject(err)
                 resolve(data)
@@ -86,4 +86,7 @@ exports.checkedTables = function() {
     });
 }
 
-//
+exports.close = function() {
+        db.close();
+    }
+    //
