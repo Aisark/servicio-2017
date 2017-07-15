@@ -36,10 +36,9 @@ noUiSlider.create(slider, {
  *
  **/
 function loadObject() {
-    config.getOBjc().then(function(data) {
-        $('#banner').text('Presiona para iniciar')
-        $('.progress').addClass('hide')
-        $('#iniciar').removeClass('hide disabled')
+    config.getOBjc().then(function() {
+        var nombre = config.getItemObj('userData', 'name') + ' ' + config.getItemObj('userData', 'lastName')
+        $('#banner').text('BIENVENIDO ' + nombre)
     })
 }
 
@@ -82,7 +81,10 @@ $('#closeConfig').on('click', function() {
 $('#agreGame').on('click', function() {
     var nPuzz = $('input:radio[name=dif1]:checked').val(),
         nEcua = $('input:radio[name=dif2]:checked').val(),
-        urlImg = document.getElementById('urlimg').files[0].path
+        url = document.getElementById('urlimg').files,
+        urlImg = (url.length !== 0) ? url[0].path : ""
+
+
 
     config.setItemObject(nPuzz, 'lvlPuzz')
     config.setItemObject(nEcua, 'lvlEcua')

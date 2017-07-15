@@ -15,15 +15,22 @@
 
 <body>
 
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <ul class="right">
+                    <li><a id="minimizar"><i class="material-icons">remove</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
     <!-- ++++ Intro aplicación ++++ -->
     <div class="row" id="intro">
         <div class="parallax-container">
             <div class="center">
                 <h2 id="banner" class="animated infinite pulse">Cargando</h2>
-                <div class="progress">
-                    <div class="indeterminate"></div>
-                </div>
-                <a href='#sesion' class="btn deep-orange accent-3 waves-effect white-text white-text-2 hide disabled" id="iniciar">Iniciar</a>
+                <a href='#sesion' class="btn deep-orange accent-3 waves-effect white-text white-text-2" id="iniciar">Iniciar</a>
             </div>
             <div class="parallax"><img src="../img/fondos/school.jpg"></div>
         </div>
@@ -182,6 +189,9 @@
     </script>
     <script>
         require('../js/Events/configInit.js')
+    </script>
+    <script>
+        require('../js/renderProcess/render.js')
     </script>
 </body>
 
