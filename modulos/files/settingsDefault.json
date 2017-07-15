@@ -1,14 +1,12 @@
 {
-  "volEffects" : 10,
-  "stateEffects" : true,
-  "userLog" : false,
-  "userSign" : false,
-  "userData" : {
-    "name": "",
-    "lastName": "",
-    "userName": ""
-  },
-  "lvlPuzz" : 1,
-  "lvlEcua" : 1,
-  "urlImg" : ""
+    "volEffects": 10,
+    "stateEffects": true,
+    "userData": {
+        "name": "",
+        "lastName": "",
+        "userName": ""
+    },
+    "lvlPuzz": 1,
+    "lvlEcua": 1,
+    "urlImg": ""
 }

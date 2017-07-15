@@ -16,16 +16,16 @@ var object;
  *
  *
  **/
-exports.getOBjc = function () {
-  return new Promise(function(resolve, reject) {
-    jstorage.get('settings',function (error,data) {
-      if(error){
-        reject(error);
-      }
-      object = data;
-      resolve(data)
-    })
-  });
+exports.getOBjc = function() {
+    return new Promise(function(resolve, reject) {
+        jstorage.get('settings', function(error, data) {
+            if (error) {
+                reject(error);
+            }
+            object = data;
+            resolve()
+        })
+    });
 }
 
 /**
@@ -38,13 +38,14 @@ exports.getOBjc = function () {
  *
  *
  **/
-exports.setObject = function () {
-  return new Promise(function(resolve, reject) {
-    jstorage.set('settings',object,function (error) {
-      if (error) reject(erro);
-      resolve()
-    })
-  });
+exports.setObject = function(obj) {
+    return new Promise(function(resolve, reject) {
+        var ob = (obj == undefined) ? object : obj
+        jstorage.set('settings', ob, function(error) {
+            if (error) reject(erro);
+            resolve()
+        })
+    });
 }
 
 /**
@@ -60,13 +61,12 @@ exports.setObject = function () {
  * @param {item} String
  * @param {item} String (Opcional)
  **/
-exports.getItemObj = function (item,item2) {
-  if(item2===undefined){
-    return object[item]
-  }else{
-    return object[item][item2]
-  }
-
+exports.getItemObj = function(item, item2) {
+    if (item2 === undefined) {
+        return object[item]
+    } else {
+        return object[item][item2]
+    }
 }
 
 /**
@@ -83,10 +83,10 @@ exports.getItemObj = function (item,item2) {
  * @param {item} String
  * @param {item} String (Opcional)
  **/
-exports.setItemObject = function (data,item,item2) {
-  if(item2===undefined){
-    object[item] = data
-  }else{
-    object[item][item2] = data
-  }
+exports.setItemObject = function(data, item, item2) {
+    if (item2 === undefined) {
+        object[item] = data
+    } else {
+        object[item][item2] = data
+    }
 }

@@ -1,111 +1,111 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Quix</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-    <link href="../materialize/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="../css/main.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="../css/fonts.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
-    <link href="../css/modals_style.css" type="text/css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <link href="../materialize/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="../css/main.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="../css/fonts.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <link href="../css/modals_style.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="../css/animate.css">
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- ++++ Indefinido ++++ -->
     <div class="row" id="f1">
-      <div class="valign-wrapper btnMain col s2 offset-s10">
-        <a class="btn-floating btn-large waves-effect waves-light  blue left-align">
-          <i class="fa fa-minus" id="minimizar"></i>
-        </a>
-        <a class="btn-floating btn-large waves-effect waves-light  red">
-          <i class="fa fa-times" id="closeBrows"></i>
-        </a>
-        <a class="btn-floating btn-large waves-effect waves-light  blue left-align">
-          <i class="fa fa-refresh" id="reload"></i>
-        </a>
-      </div>
+        <nav>
+            <div class="nav-wrapper redBack">
+                <ul class="right">
+                    <li><a id="minimizar"><i class="material-icons">remove</i></a></li>
+                    <li class="hide"><a id="reload"><i class="material-icons">refresh</i></a></li>
+                    <li><a id="closeBrows"><i class="material-icons">close</i></a></li>
+                </ul>
+            </div>
+        </nav>
     </div>
     <!-- ++++++++++++++++++++ -->
     <!-- ++++ Fila Canvas y Ecuacion ++++ -->
     <div class="row" id="f2">
-      <!-- ++++ Fila de la Ecuacion a resolver y respuesta ++++ -->
-      <div class="col m6" id="answer">
-        <div class="card-panel z-depth-5">
-          <!-- ++++ Fila de la ecuacion a resolver ++++ -->
-          <div class="row">
-            <div id="instr"class="valign-wrapper">
-              <h5 class="Roboto  blue-text text-lighten-5"> Hallar el valor de X en la siguiente ecuación:</h5>
-            </div>
-            <div id="formula">
-              <h5  id="ecuaMath" class="center-align"></h5>
-            </div>
-          </div>
-          <!-- ++++++++++++++++++++++++++++++++++++++++ -->
-          <!-- ++++ Fila form de respuesta ++++ -->
-          <div class="row" id="formulario">
-            <form class="col m12 s12" >
-              <div class="row">
-                <div class="col m4 s4 input-field">
-                  <input id="respuestas" type="text" class="validate">
-                  <label for="respuestas">X = </label>
+        <!-- ++++ Fila de la Ecuacion a resolver y respuesta ++++ -->
+        <div class="col m6" id="answer">
+            <div class="card-panel z-depth-5">
+                <!-- ++++ Fila de la ecuacion a resolver ++++ -->
+                <div class="row">
+                    <div id="instr" class="valign-wrapper">
+                        <h5 class="Roboto  blue-text text-lighten-5"> Hallar el valor de X en la siguiente ecuación:</h5>
+                    </div>
+                    <div id="formula">
+                        <h5 id="ecuaMath" class="center-align"></h5>
+                    </div>
                 </div>
-                <div class="col m4 s4 good-bad">
-                  <i id="bien" class="medium material-icons animated bounceIn s12 hide">close</i>
+                <!-- ++++++++++++++++++++++++++++++++++++++++ -->
+                <!-- ++++ Fila form de respuesta ++++ -->
+                <div class="row" id="formulario">
+                    <form class="col m12 s12">
+                        <div class="row">
+                            <div class="col m4 s4 input-field">
+                                <input id="respuestas" type="text" class="validate">
+                                <label for="respuestas">X = </label>
+                            </div>
+                            <div class="col m4 s4 good-bad">
+                                <i id="bien" class="medium material-icons animated bounceIn s12 hide">close</i>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-              </div>
-            </form>
-          </div>
-          <!-- ++++++++++++++++++++++++++++++++ -->
-          <!-- ++++ Fila de Botones Tips y Ver Resultado ++++ -->
-          <div class="row" id="btnEvents">
-            <div class="col s12 m6">
-              <a id="tips" href="#tipsM" class="btn red darken-1 tips hide">Tips</a>
+                <!-- ++++++++++++++++++++++++++++++++ -->
+                <!-- ++++ Fila de Botones Tips y Ver Resultado ++++ -->
+                <div class="row" id="btnEvents">
+                    <div class="col s12 m6">
+                        <a id="tips" href="#tipsM" class="btn red darken-1 tips hide">Tips</a>
+                    </div>
+                    <div class="col s12 m6 next">
+                        <a id="siguiente" href="#solucionM" class="btn  indigo darken-1 hide">Ver solución</a>
+                    </div>
+                </div>
+                <!-- ++++++++++++++++++++++++++++++++++++++++++++++ -->
             </div>
-            <div class="col s12 m6 next">
-              <a id="siguiente" href="#solucionM" class="btn  indigo darken-1 hide">Ver solución</a>
-            </div>
-          </div>
-          <!-- ++++++++++++++++++++++++++++++++++++++++++++++ -->
         </div>
-      </div>
-      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-      <!-- ++++ Fila del canvas ++++ -->
-      <div class="col m6" id="Canvas">
-        <div class="row" id="puntaje">
-          <div class="col m6 s6">
-            <div class="card-panels white-text">
-              <div class="valign-wrapper">
-                <h5 id="nombre">Antonio Toga Martin</h5>
-                <h5 id="semestre">6 sem.</h5>
-              </div>
-              <div class="valign-wrapper">
-                <h5 id="lblRes">Total Resueltas:</h5>
-                <h5 id="resueltas">00</h5>
-              </div>
+        <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <!-- ++++ Fila del canvas ++++ -->
+        <div class="col m6" id="Canvas">
+            <div class="row" id="puntaje">
+                <div class="col m6 s6">
+                    <div class="card-panels white-text">
+                        <div class="valign-wrapper">
+                            <h5 id="nombre">Antonio Toga Martin</h5>
+                            <h5 id="semestre">6 sem.</h5>
+                        </div>
+                        <div class="valign-wrapper">
+                            <h5 id="lblRes">Total Resueltas:</h5>
+                            <h5 id="resueltas">00</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col m6 s6">
+                    <div class="card-panels white-text">
+                        <div class="valign-wrapper">
+                            <h4>Score :</h4>
+                            <h4 id="score">00 Exp</h4>
+                        </div>
+                        <div class="valign-wrapper">
+                            <h4>Movimientos:</h4>
+                            <h4 id="intentos">00</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col m6 s6">
-            <div class="card-panels white-text">
-              <div class="valign-wrapper">
-                <h4>Score :</h4>
-                <h4 id="score">00 Exp</h4>
-              </div>
-              <div class="valign-wrapper">
-                <h4 >Movimientos:</h4>
-                <h4 id="intentos" >00</h4>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="row" id="lienzo">
-          <div class="col m12">
-            <canvas id="canvas" class="hoverable"></canvas>
-          </div>
+            <div class="row" id="lienzo">
+                <div class="col m12">
+                    <canvas id="canvas" class="hoverable"></canvas>
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- +++++++++++++++++++++++++ -->
+        <!-- +++++++++++++++++++++++++ -->
     </div>
     <!-- ++++++++++++++++++++++++++++++++ -->
 
@@ -115,72 +115,82 @@
 
     <!-- ++++ Modal de Solucion paso a paso ++++ -->
     <div class="modal modal-fixed-footer" id="solucionM">
-      <div id="modalTitle">
-        <h3 class="center-align white-text modtitle">Solución</h3>
-      </div>
-      <div class="modal-content">
-        <div class="row">
-          <ul id="pasosUl" class="collapsible popout col m10" data-collapsible="accordion">
-            <li class="active">
-              <div class="collapsible-header active"><i class="material-icons">mode_edit</i></div>
-              <div class="collapsible-body">
-                <div class="row"><h5>De la función:</h5></div>
-                <div class="row"><span id="solFun"></span></div>
-              </div>
-            </li>
-            <li class="hide active">
-              <div class="collapsible-header"><i class="material-icons">mode_edit</i></div>
-              <div class="collapsible-body">
-                <div class="row"><h5>Sumar terminos semejantes.</h5></div>
-                <span id="solTerSem"></span>
-              </div>
-            </li>
-            <li class="hide active">
-              <div class="collapsible-header"><i class="material-icons">mode_edit</i></div>
-              <div class="collapsible-body">
-                <div class="row"><h5>Reune terminos semejantes entre los miembros 1 y 2 </h5></div>
-                <span id="reunTerm"></span>
-              </div>
-            </li>
-            <li class="hide active">
-              <div class="collapsible-header"><i class="material-icons">mode_edit</i></div>
-              <div class="collapsible-body">
-                <div class="row"><h5>Sumando y Restando terminos semejantes</h5></div>
-                <span id="sumTS"></span>
-              </div>
-            </li>
-            <li class="hide active">
-              <div class="collapsible-header"><i class="material-icons">mode_edit</i></div>
-              <div class="collapsible-body">
-                <div class="row"><h5>Despejando X:</h5></div>
-                <span id="resX"></span>
-              </div>
-            </li>
-          </ul>
-          <div class="col s2">
-            <a id="nextStep" class="btn-floating btn-large waves-effect waves-light red "><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-          </div>
+        <div id="modalTitle">
+            <h3 class="center-align white-text modtitle">Solución</h3>
         </div>
-      </div>
-      <div class="modal-footer">
-        <a id="closeSM" class="modal-action modal-close btn-flat">Cerrar</a>
-      </div>
+        <div class="modal-content">
+            <div class="row">
+                <ul id="pasosUl" class="collapsible popout col m10" data-collapsible="accordion">
+                    <li class="active">
+                        <div class="collapsible-header active"><i class="material-icons">mode_edit</i></div>
+                        <div class="collapsible-body">
+                            <div class="row">
+                                <h5>De la función:</h5>
+                            </div>
+                            <div class="row"><span id="solFun"></span></div>
+                        </div>
+                    </li>
+                    <li class="hide active">
+                        <div class="collapsible-header"><i class="material-icons">mode_edit</i></div>
+                        <div class="collapsible-body">
+                            <div class="row">
+                                <h5>Sumar terminos semejantes.</h5>
+                            </div>
+                            <span id="solTerSem"></span>
+                        </div>
+                    </li>
+                    <li class="hide active">
+                        <div class="collapsible-header"><i class="material-icons">mode_edit</i></div>
+                        <div class="collapsible-body">
+                            <div class="row">
+                                <h5>Reune terminos semejantes entre los miembros 1 y 2 </h5>
+                            </div>
+                            <span id="reunTerm"></span>
+                        </div>
+                    </li>
+                    <li class="hide active">
+                        <div class="collapsible-header"><i class="material-icons">mode_edit</i></div>
+                        <div class="collapsible-body">
+                            <div class="row">
+                                <h5>Sumando y Restando terminos semejantes</h5>
+                            </div>
+                            <span id="sumTS"></span>
+                        </div>
+                    </li>
+                    <li class="hide active">
+                        <div class="collapsible-header"><i class="material-icons">mode_edit</i></div>
+                        <div class="collapsible-body">
+                            <div class="row">
+                                <h5>Despejando X:</h5>
+                            </div>
+                            <span id="resX"></span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="col s2">
+                    <a id="nextStep" class="btn-floating btn-large waves-effect waves-light red "><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a id="closeSM" class="modal-action modal-close btn-flat">Cerrar</a>
+        </div>
     </div>
     <!-- +++++++++++++++++++++++++++++++++++++++ -->
 
     <!-- ++++ Modal de Video Tip ++++ -->
     <div class="modal" id="tipsM">
-      <div id="modalTitle">
-        <h3 class="center-align white-text modtitle">Video Tips</h3>
-      </div>
-      <div class="modal-content">
-        <video id="vTutorial" controls class="responsive-video">
+        <div id="modalTitle">
+            <h3 class="center-align white-text modtitle">Video Tips</h3>
+        </div>
+        <div class="modal-content">
+            <video id="vTutorial" controls class="responsive-video">
           <source src="../videos/video_01.mp4" type="video/mp4">
         </video>
-      </div>
-      <div class="modal-footer">
-        <a id="closeTM" class="modal-action modal-close btn-flat">Cerrar</a>
-      </div>
+        </div>
+        <div class="modal-footer">
+            <a id="closeTM" class="modal-action modal-close btn-flat">Cerrar</a>
+        </div>
     </div>
     <!-- ++++++++++++++++++++++++++++ -->
 
@@ -188,25 +198,42 @@
     <canvas id="confeti"></canvas>
 
     <div id="finScore" class="modal">
-      <div class="modal-content">
-        <h4>Modal Header</h4>
-        <p>A bunch of text</p>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-      </div>
+        <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
     </div>
 
     <!-- ++++ Scripts ++++ -->
-    <script>window.$ = window.jQuery = require('jquery');</script>
-    <script>window.$.Velocity=window.jQuery.Velocity=require("materialize-css/js/velocity.min.js");</script>
-    <script>require('../materialize/js/materialize.min.js')</script>
-    <script>require('../js/Events/init.js')</script>
-    <script>window.btn = require('../js/Events/btn.js')</script>
-    <script>require('../js/Equations/pasos.js')</script>
-    <script type="text/javascript">require('../js/renderProcess/render.js');</script>
-    <script>require('../js/Canvas/confeti.js')</script>
+    <script>
+        window.$ = window.jQuery = require('jquery');
+    </script>
+    <script>
+        window.$.Velocity = window.jQuery.Velocity = require("materialize-css/js/velocity.min.js");
+    </script>
+    <script>
+        require('../materialize/js/materialize.min.js')
+    </script>
+    <script>
+        require('../js/Events/init.js')
+    </script>
+    <script>
+        window.btn = require('../js/Events/btn.js')
+    </script>
+    <script>
+        require('../js/Equations/pasos.js')
+    </script>
+    <script>
+        require('../js/renderProcess/render.js');
+    </script>
+    <script>
+        require('../js/Canvas/confeti.js')
+    </script>
     <!-- +++++++++++++++++ -->
 
-  </body>
+</body>
+
 </html>
