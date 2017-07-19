@@ -2,6 +2,7 @@ const { ipcRenderer } = require('electron')
 const remote = require('electron').remote
 const path = require('path')
 const url = require('url')
+const confInit = require('../../js/Events/configInit');
 
 /**
  * @summary Open Menu principal
@@ -33,10 +34,13 @@ function openMenu(time) {
  * @param {mod} Cadena de texto
  * @param {time} Numero de tipo entero
  */
-function openModal(mod, time) {
-    setTimeout(function() {
-        $('#' + mod).modal('open')
-    }, time)
+function openModal(btn, mod, time) {
+    $('#' + btn).on('click', function() {
+        setTimeout(function() {
+            $('#' + mod).modal('open')
+        }, time)
+    })
+
 }
 
 $(document).ready(function() {
@@ -61,14 +65,21 @@ $(document).ready(function() {
         inDuration: 200,
         outDuration: 200
     })
+    $('#Perfil').modal({
+        dismissible: false,
+        opacity: .2,
+        endingTop: '15%',
+        inDuration: 200,
+        outDuration: 200
+    })
 
     //Abrir modals dinamicamente
     $('#iniciar').on('click', function() {
         openMenu(300)
     });
-    $('#openConfig').on('click', function() {
-        openModal('configs', 200)
-    })
+    openModal('openConfig', 'configs', 200)
+    openModal('openPerfil', 'Perfil', 200)
+
 
     //Abrir el modal de Opciones iniciales del juego
     $('#iniGame').on('click', function() {
@@ -86,6 +97,17 @@ $(document).ready(function() {
     $('#canGame').on('click', function() {
         $('#opcIni').modal('close')
         openMenu(200)
+    })
+    $('#save').click(function() {
+        confInit.saveNewData().then(function() {
+            $('#Perfil').modal('close')
+        }).catch(function(msj) {
+            Materialize.toast(msj, 5000)
+        })
+    })
+    $('#noSave').click(function() {
+        confInit.cancelData()
+        $('#Perfil').modal('close')
     })
 
     //Iniciar juego principal
