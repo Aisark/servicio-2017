@@ -29,6 +29,7 @@ function createWindow(width, height) {
     win.setResizable(false);
 
     win.on('closed', () => {
+        dbsql.close()
         win = null
     })
 }
@@ -60,11 +61,13 @@ function logwindow() {
         slashes: true
     }))
     logwin.on('closed', () => {
+        dbsql.close()
         var url = win.webContents.getURL()
         if (url == '' || url == undefined || url == null) {
             win.close()
         }
         logwin = null
+
     })
 }
 
