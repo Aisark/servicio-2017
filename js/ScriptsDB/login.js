@@ -29,9 +29,10 @@ function logUSer(user, tipo) {
 
 
 function setConfig(user, data) {
-    config.setItemObject(user, 'userData', 'userName')
-    config.setItemObject(data.NOMBRE, 'userData', 'name')
-    config.setItemObject(data.AP_PAT, 'userData', 'lastName')
+    config.setItemObject(user, 'userData', 'USERNAME')
+    config.setItemObject(data.NOMBRE, 'userData', 'NOMBRE')
+    config.setItemObject(data.AP_PAT, 'userData', 'AP_PAT')
+    config.setItemObject(data.AP_MAT, 'userData', 'AP_MAT')
     config.setObject()
 }
 
@@ -51,6 +52,13 @@ function setTeachList() {
 
 $('#senStuden').on('click', function() {
     logUSer('Stu', 'ALUMNOS')
+})
+
+$('#passStu').keypress(function(event) {
+    if (event.which == 13) {
+        event.preventDefault()
+        logUSer('Stu', 'ALUMNOS')
+    }
 })
 
 $('#sendMa').on('click', function() {
