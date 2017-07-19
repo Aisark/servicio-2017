@@ -1,6 +1,8 @@
-const res = require('../../js/Equations/resolucion.js');
-const confeti = require('../../js/Canvas/confeti.js');
-const PUZZLE_DIFFICULTY = 2
+const res = require('../../js/Equations/resolucion.js')
+const confeti = require('../../js/Canvas/confeti.js')
+const config = require('../../modulos/config.js')
+
+var PUZZLE_DIFFICULTY
 const PUZZLE_HOVER_TINT = '#378A37';
 
 var _efecto = document.getElementById('efecto') //guarda la etiqueta de audio de efectos de sonio
@@ -10,7 +12,7 @@ var _intentos = document.getElementById('intentos')
 var _ban = { intent: 0 } //piezas que se puedan mover
 var _lienzo = document.getElementById('lienzo') //guarda la fila donde se dibuja el canvas
 
-
+var _src
 var _canvas
 var _stage
 
@@ -36,12 +38,17 @@ function effectSound(src, vol) {
 }
 
 function init() {
-    _img = new Image()
-    _img.addEventListener('load', onImage, false)
-    _img.src = '../img/img-3.jpg'
+    config.getOBjc().then(function() {
+        console.log();
+        _src = (config.getItemObj('urlImg') == "") ? '../img/img-3.jpg' : config.getItemObj('urlImg')
+        _img = new Image()
+        _img.addEventListener('load', onImage, false)
+        _img.src = _src
+    })
 }
 
 function onImage() {
+    PUZZLE_DIFFICULTY = config.getItemObj('lvlPuzz')
     _pieceWidthImg = Math.floor(_img.width / PUZZLE_DIFFICULTY)
     _pieceHeightImg = Math.floor(_img.height / PUZZLE_DIFFICULTY)
     _pieceWidthCanvas = (_lienzo.scrollWidth - 80) / PUZZLE_DIFFICULTY
