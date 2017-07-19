@@ -26,7 +26,6 @@ function checkUserAvi() {
     $('#nickUs').change(function() {
         var tipo = $('input:radio[name=tipoUser]:checked').val()
         var dato = $(this).val()
-        console.log(dato);
         if (dato.length > 3) {
             db.getUserAvia(tipo).then(function(array) {
                 if (array.length > 0) {
