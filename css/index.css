@@ -33,6 +33,10 @@ nav {
     -webkit-animation-delay: 0s;
 }
 
+.uppercase {
+    text-transform: uppercase;
+}
+
 
 /*---- Intro ----*/
 
@@ -52,12 +56,9 @@ nav {
 }
 
 
-/*----      ----*/
+/*---- Menu ----*/
 
-
-/*---- Sesion ----*/
-
-#sesion {
+#menu {
     width: 100%;
     height: 50%;
 }
@@ -82,12 +83,12 @@ nav {
 }
 
 #menuButtons li a {
-    margin: .5em 0;
-    padding-top: .6em;
+    margin: .3em 0;
+    padding-top: .4em;
     padding-left: 1em;
     padding-right: 1em;
-    font-size: 2em;
-    height: 3em !important;
+    font-size: 1.8em;
+    height: 2.8em !important;
 }
 
 #menuButtons li a:hover {
@@ -98,110 +99,6 @@ nav {
     height: 3.1em !important;
     background-color: #0d47a1 !important;
 }
-
-#menuButtons li i {
-    font-size: 1.5em;
-}
-
-#menuButtons li i:hover {
-    font-size: 1.7em;
-}
-
-
-/*---- Modal Registro ----*/
-
-#registro {
-    background-color: rgba(54, 202, 154, 0.62);
-    border-radius: 0;
-}
-
-#registro::-webkit-scrollbar {
-    width: .5em;
-}
-
-#registro::-webkit-scrollbar-thumb {
-    background-color: rgba(129, 199, 132, 0.62);
-    outline: 1px solid black;
-}
-
-#registro::-webkit-scrollbar-button {
-    background-color: rgba(54, 202, 154, 0.8);
-    width: 1em;
-}
-
-#registro::-webkit-scrollbar-track {
-    background-color: rgba(255, 255, 255, 0.62);
-}
-
-
-/*---- Formulario Sesion ----*/
-
-.iniSesion {
-    padding: 0 .75rem !important;
-}
-
-.iniSesion label,
-.iniSesion i {
-    color: #01579b;
-    font-size: 1.2em;
-}
-
-.iniSesion input[type=text] {
-    border-bottom-color: #01579b;
-}
-
-.iniSesion input[type=text]:focus+label {
-    color: #b71c1c;
-}
-
-.iniSesion input[type=text]:focus {
-    border-bottom-color: #b71c1c;
-}
-
-.iniSesion .prefix.active {
-    color: #b71c1c;
-    font-size: 1.3em;
-}
-
-
-/**/
-
-
-/*---- Formulario Registrar Usuario ----*/
-
-#regisUser {
-    margin-top: 8%;
-}
-
-.regisUser {
-    padding: 0 .75rem !important;
-}
-
-.regisUser label,
-.regisUser i {
-    color: #b71c1c;
-    font-size: 1.2em;
-}
-
-.regisUser input[type=text] {
-    border-bottom-color: #b71c1c;
-}
-
-.regisUser input[type=text]:focus+label {
-    color: #01579b;
-}
-
-.regisUser input[type=text]:focus {
-    border-bottom-color: #01579b;
-}
-
-.regisUser .prefix.active {
-    color: #01579b;
-    font-size: 1.3em;
-}
-
-
-/**/
 
 
 /*---- Modal Configuración ----*/
@@ -286,6 +183,30 @@ nav {
 #opcIni .file-field [type="text"] {
     border-bottom: 1px solid #eeff41;
     color: white;
+}
+
+
+/* Modal Opciones de Perfil */
+
+#Perfil .input-field {
+    padding: 0 .75rem !important;
+}
+
+#Perfil .input-field label {
+    color: white;
+}
+
+#Perfil .input-field input:focus+label {
+    color: #ffff00;
+}
+
+#Perfil .input-field input:focus {
+    border-bottom: 1px solid #ffff00;
+    box-shadow: 0 1px 0 0 #ffff00;
+}
+
+#Perfil .input-field input {
+    border-bottom: 1px solid white;
 }
 
 
