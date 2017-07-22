@@ -1,5 +1,6 @@
 const res = require('../../js/Equations/resolucion.js');
 const puzzle = require('../../js/Canvas/rompecabezas.js')
+const config = require('../../modulos/config.js')
 
 var _siguiente = document.getElementById('siguiente')
 var _tips = document.getElementById('tips')
@@ -10,6 +11,7 @@ var _intentos = document.getElementById('intentos')
 var _icono = document.getElementById('bien')
 var _efecto = document.getElementById('efecto')
 var _closeSM = document.getElementById('closeSM')
+var _lvl = 0
 
 /**
  * @summary Procesa la respuesta enviada
@@ -85,7 +87,7 @@ function checkErrors() {
         _answer.value = ''
         _tips.classList.add('hide')
         _siguiente.classList.add('hide')
-        res.setEcuacion()
+        res.setEcuacion(_lvl)
     } else {
         if (res.getData('errors') === 3) {
             _tips.classList.remove('hide')
@@ -163,9 +165,12 @@ function soundEffect(src) {
 
 //Al cargas la pagina game.html lanza la funcion setEcuacion()
 //y pone el simbolo igual entre los terminos
-window.onload = () => {
-    res.setEcuacion();
-}
+$(document).ready(function() {
+    config.getOBjc().then(function() {
+        _lvl = config.getItemObj('lvlEcua')
+        res.setEcuacion(_lvl)
+    })
+})
 
 //Eventos en los distintos botones
 _answer.onkeypress = enter

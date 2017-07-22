@@ -15,8 +15,12 @@ var _terminos = {
 //Suma la cantidad de terminos independientes y dependientes de ambos mienbros de una
 //funcion
 function respuesta() {
+    console.log(_terminos.m1);
+    console.log(_terminos.m2);
     var ax1 = _terminos.m1.split(' ')
     var ax2 = _terminos.m2.split(' ')
+    console.log(ax1);
+    console.log(ax2);
 
     var a1 = splitEcua(ax1)
     var a2 = splitEcua(ax2)
@@ -26,6 +30,7 @@ function respuesta() {
     _terminos.m2I = a2[1]
     _terminos.x = (a1[0] - a2[0])
     _terminos.c = (a2[1] - a1[1])
+    console.log(_terminos.c + '/' + _terminos.x);
 }
 
 //Devuelve un arreglo con la suma de las x en un termino, y los terminos independientes
@@ -47,7 +52,7 @@ function splitEcua(array) {
                 default:
                     a[0] += parseInt(array[i].replace("x", ""))
             }
-        } else {
+        } else if (array[i] != "") {
             a[1] += parseInt(array[i])
         }
     }
@@ -56,11 +61,13 @@ function splitEcua(array) {
 }
 
 
-exports.setEcuacion = function() {
-    var n = ecuacion.ecuacion()
-    _terminos.m1 = n[0]
-    _terminos.m2 = n[1]
+exports.setEcuacion = function(lvl) {
+    var n = ecuacion.ecuacion(lvl)
+    _terminos.m1 = (lvl == 1) ? n[0] : ecuacion.reduce(n[0])
+    _terminos.m2 = (lvl == 1) ? n[1] : ecuacion.reduce(n[1])
     respuesta()
+    n[0] = (lvl == 1) ? n[0] : ecuacion.clsEcua(n[0])
+    n[1] = (lvl == 1) ? n[1] : ecuacion.clsEcua(n[1])
     var cadena = n[0] + ' ' + ' = ' + ' ' + n[1]
     $('#ecuaMath').text(cadena)
 }
