@@ -1,7 +1,12 @@
+const { ipcRenderer } = require('electron')
+const remote = require('electron').remote
+const path = require('path')
+const url = require('url')
 const noUiSlider = require('../../noUiSlider/nouislider.min.js')
 const wNumb = require('../../noUiSlider/wNumb.js')
 const config = require('../../modulos/config.js')
 const db = require('../../js/ScriptsDB/basedatos.js')
+
 
 var slider = document.getElementById('volRange')
 
@@ -202,16 +207,22 @@ $('#closeConfig').on('click', function() {
  * @param {callback} Funcion a ejecutar
  **/
 $('#agreGame').on('click', function() {
+    var linkUrl = url.format({
+        pathname: path.join(__dirname, '../../templates/main.html'),
+        protocol: 'file:',
+        slashes: true
+    })
     var nPuzz = $('input:radio[name=dif1]:checked').val(),
         nEcua = $('input:radio[name=dif2]:checked').val(),
-        url = document.getElementById('urlimg').files,
-        urlImg = (url.length !== 0) ? url[0].path : ""
+        _url = document.getElementById('urlimg').files,
+        urlImg = (_url.length !== 0) ? url[0].path : ""
 
     config.setItemObject(nPuzz, 'lvlPuzz')
     config.setItemObject(nEcua, 'lvlEcua')
     config.setItemObject(urlImg, 'urlImg')
-
-    config.setObject().catch(function(error) {})
+    config.setObject().then(function() {
+        ipcRenderer.send('load-page', linkUrl)
+    })
 })
 
 

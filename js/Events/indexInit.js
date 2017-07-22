@@ -1,7 +1,4 @@
-const { ipcRenderer } = require('electron')
 const remote = require('electron').remote
-const path = require('path')
-const url = require('url')
 const confInit = require('../../js/Events/configInit');
 
 /**
@@ -112,13 +109,7 @@ $(document).ready(function() {
 
     //Iniciar juego principal
     $('#agreGame').on('click', function() {
-        var linkUrl = url.format({
-            pathname: path.join(__dirname, '../../templates/main.html'),
-            protocol: 'file:',
-            slashes: true
-        })
         $('#opcIni').modal('close');
-        ipcRenderer.send('load-page', linkUrl)
     })
 
     //Cerrar aplicación
