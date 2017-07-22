@@ -2,3 +2,4 @@ node_modules
 videos
 *.mp4
 Quix-release-build
+*.db
