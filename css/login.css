@@ -1,0 +1,153 @@
+/* ++++ General ++++ */
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #5ebef4;
+}
+
+.row {
+    margin-bottom: 0px;
+}
+
+.col {
+    padding: 0px 0px !important;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.desabilitado {
+    pointer-events: none;
+}
+
+
+/*++++ Tabs Swipe ++++*/
+
+#btnCR {
+    height: 10%;
+}
+
+#btnCR nav {
+    box-shadow: 0 0 0 0;
+}
+
+@media only screen and (min-width: 601px) {
+    #btnCR nav {
+        height: 100% !important;
+    }
+    nav .nav-wrapper i,
+    nav a.button-collapse,
+    nav a.button-collapse i {
+        height: 50px;
+        line-height: 50px;
+    }
+    #btnCR nav div ul {
+        padding-top: 5px;
+        margin-right: 10px;
+    }
+}
+
+#tabs {
+    height: 90% !important;
+    width: 100% !important;
+}
+
+#tabs #tabsSwipe {
+    height: 10% !important;
+}
+
+#tabs .tabs-content {
+    height: 90% !important;
+}
+
+#tabs .tabla {
+    height: 100% !important;
+    margin-bottom: 0;
+}
+
+.imgRow {
+    height: 25%;
+}
+
+.formRow {
+    height: 75%;
+}
+
+.tabs .tab a {
+    color: white;
+}
+
+.tabs .tab a:hover {
+    color: rgb(49, 95, 139);
+}
+
+.tabs .indicator {
+    background-color: rgb(154, 237, 34);
+}
+
+.progress {
+    margin: 0;
+    position: absolute;
+    top: 110px;
+}
+
+#tabsSwipe li {
+    height: 100%;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+    cursor: pointer;
+    color: #0089ec;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating):hover {
+    color: #f32718;
+}
+
+.redBack {
+    background-color: #df5c51;
+}
+
+.blueBack {
+    background-color: #5ebef4;
+}
+
+
+/* IDEA: Tab Students #D1ECFB */
+
+.imgRow img {
+    height: 8em !important;
+    width: 8em !important;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding-top: .5em;
+}
+
+.formRow .m6 {
+    height: 100%
+}
+
+.formRow .m6 .card {
+    height: 90%;
+}
+
+.formRow .card-content {
+    height: 85%;
+}
+
+
+/* IDEA: Tab Teachers */
+
+
+/* IDEA: Tab Sing Up */
+
+#tabSingUp .input-field {
+    padding: 0 .75rem !important;
+}
+
+
+/**/

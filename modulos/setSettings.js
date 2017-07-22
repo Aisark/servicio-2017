@@ -17,7 +17,6 @@ const fs = require('fs');
 function setFileJSON() {
   fs.readFile(path.join(__dirname,'files/settingsDefault.json'), 'utf8', function (err, data) {
     if (err){
-      console.log('No se encontro archivo');
       throw err
     } else {
       var obj = JSON.parse(data);
@@ -39,7 +38,6 @@ function setFileJSON() {
 function creatJSON(obj) {
   storage.set('storage/settings', obj)
   .then(() => {
-    console.log('The file was successfully written to the storage');
   })
   .catch(err => {
     console.error(err);
@@ -61,9 +59,7 @@ function creatJSON(obj) {
 module.exports = ()=>{
   storage.isPathExists('storage/settings.json', (itDoes) => {
     if (itDoes) {
-      console.log('pathDoesExists !')
     }else {
-      console.log('pathDoesNotExists !');
       setFileJSON()
     }
   });

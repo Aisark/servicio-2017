@@ -1,193 +1,257 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>index</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-    <link href="../materialize/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="../css/fonts.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <link href="../materialize/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="../css/fonts.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../noUiSlider/nouislider.css">
-  </head>
-  <body>
+</head>
+
+<body>
+
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <ul class="right">
+                    <li><a id="minimizar"><i class="material-icons">remove</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 
     <!-- ++++ Intro aplicación ++++ -->
     <div class="row" id="intro">
-      <div class="parallax-container">
-        <div class="center">
-          <h2 id="banner"class="animated infinite pulse">Presiona para iniciar</h2>
-          <a href='#sesion' class="btn waves-effect white grey-text darken-text-2" id="iniciar">Iniciar</a>
+        <div class="parallax-container">
+            <div class="center">
+                <h2 id="banner" class="animated infinite pulse">Cargando</h2>
+                <a href='#menu' class="btn deep-orange accent-3 waves-effect white-text white-text-2" id="iniciar">Iniciar</a>
+            </div>
+            <div class="parallax"><img src="../img/fondos/school.jpg"></div>
         </div>
-        <div class="parallax"><img src="../img/fondos/school.jpg"></div>
-      </div>
     </div>
     <!-- ++++ ++++++++++++++++ ++++ -->
 
     <!-- ++++ Menu aplicación ++++ -->
-    <div class="row scrollspy" id="sesion">
-      <div class="parallax-container">
+    <div class="row scrollspy" id="menu">
+        <div class="parallax-container">
 
-        <div class="row" id="logoMain"></div>
-        <div class="row" id="menuMain">
-          <ul class="center hide" id="menuButtons">
-            <li>
-              <a class="waves-effect waves-light btn-large blue accent-3 z-depth-5" id="iniGame">
-                <i class="material-icons right">play_arrow</i>INICIAR
-              </a>
-            </li>
-            <li>
-              <a class="waves-effect waves-light btn-large blue accent-3 z-depth-5" id="openConfig">
-                <i class="material-icons left">settings</i>CONFIGURAR
-              </a>
-            </li>
-            <li>
-              <a class="waves-effect waves-light btn-large blue accent-3 z-depth-5" id="closeGame">
-                <i class="material-icons right">power_settings_new</i>SALIR
-              </a>
-            </li>
-          </ul>
+            <div class="row" id="logoMain"></div>
+            <div class="row" id="menuMain">
+                <ul class="center hide" id="menuButtons">
+                    <li>
+                        <a class="waves-effect waves-light btn-large blue accent-3 z-depth-5" id="iniGame">
+                            <i class="material-icons right">play_arrow</i>INICIAR
+                        </a>
+                    </li>
+                    <li>
+                        <a class="waves-effect waves-light btn-large blue accent-3 z-depth-5" id="openConfig">
+                            <i class="material-icons left">settings</i>CONFIGURAR
+                        </a>
+                    </li>
+                    <li>
+                        <a class="waves-effect waves-light btn-large blue accent-3 z-depth-5" id="openPerfil">
+                            <i class="material-icons">supervisor_account</i> PERFIL
+                        </a>
+                    </li>
+                    <li>
+                        <a class="waves-effect waves-light btn-large blue accent-3 z-depth-5" id="closeGame">
+                            <i class="material-icons right">power_settings_new</i>SALIR
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="parallax"><img src="../img/fondos/school_03.jpg"></div>
         </div>
-
-        <div class="parallax"><img src="../img/fondos/school_03.jpg"></div>
-      </div>
     </div>
     <!-- ++++ +++++++++++++++ ++++ -->
 
-    <!-- ++++ Modal Inicio Sesion ++++ -->
-    <div class="modal" id="registro">
-      <div class="modal-content">
-        <div class="row" id="iniSesion">
-          <form class="col m12">
-            <div class="row">
-              <div class="col m12"><h4 class="center-align">Iniciar Sesión</h4></div>
-            </div>
-            <div class="row">
-              <div class="input-field iniSesion col m6">
-                <i class="material-icons prefix">perm_identity</i>
-                <input id="usuario" type="text" class="validate">
-                <label for="usuario">Usuario</label>
-              </div>
-              <div class="input-field iniSesion col m6">
-                <i class="fa fa-id-card-o prefix" aria-hidden="true"></i>
-                <input id="pasww" type="text" class="validate">
-                <label for="pasww">No. Control</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="center"><a class="btn waves-effect light-blue darken-4" id="subSesion">Iniciar Sesion</a></div>
-            </div>
-          </form>
-        </div>
-        <div class="row" id="regisUser">
-          <form class="col m12">
-            <div class="row">
-              <div class="col m12"><h4 class="center-align">Registrarse</h4></div>
-            </div>
-            <div class="row">
-              <div class="input-field regisUser col m4">
-                <i class="prefix fa fa-user-o" aria-hidden="true"></i>
-                <input id="nombre" type="text" class="validate">
-                <label for="nombre">Nombre(s)</label>
-              </div>
-              <div class="input-field regisUser col m4">
-                <i class="fa fa-pencil prefix" aria-hidden="true"></i>
-                <input id="apPaterno" type="text" class="validate">
-                <label for="apPaterno">Apellido Paterno</label>
-              </div>
-              <div class="input-field regisUser col m4">
-                <i class="fa fa-pencil prefix" aria-hidden="true"></i>
-                <input id="apMaterno" type="text" class="validate">
-                <label for="apMaterno">Apellido Materno</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field regisUser col m6">
-                <i class="material-icons prefix">perm_identity</i>
-                <input id="nombre" type="text" class="validate">
-                <label for="nombre">Usuario</label>
-              </div>
-              <div class="input-field regisUser col m6">
-                <i class="fa fa-id-card-o prefix" aria-hidden="true"></i>
-                <input id="apPaterno" type="text" class="validate">
-                <label for="apPaterno">Num. Control</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="center"><a class="btn waves-effect red darken-3" id="subRegis">Registrarse</a></div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <!-- ++++ ++++++++++++++++++ ++++ -->
-
     <!-- ++++ Modal Configuración ++++ -->
     <div class="modal" id="configs">
-      <div class="modal-content">
-        <div class="row">
-          <form class="col m12">
+        <div class="modal-content">
             <div class="row">
-              <div class="col m12"><h4 class="center-align">Configuraciones</h4></div>
+                <form class="col m12">
+                    <div class="row">
+                        <div class="col m12">
+                            <h4 class="center-align">Configuraciones</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col m10 offset-m1">
+                            <div class="switch">
+                                <span>Efectos de Sonido </span>
+                                <label>Off <input id="effSound" type="checkbox" checked><span class="lever"></span> On</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col m4 offset-m1"><span>Volumen de Sonido</span></div>
+                        <div class="col m6">
+                            <div id="volRange"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="center"><a class="btn waves-effect light-blue darken-4" id="closeConfig">Aceptar</a></div>
+                    </div>
+                </form>
             </div>
-            <div class="row">
-              <div class="col m10 offset-m1">
-                <div class="switch">
-                  <span>Efectos de Sonido </span>
-                  <label>Off <input type="checkbox" checked><span class="lever"></span> On</label>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col m4 offset-m1"><span>Volumen de Sonido</span></div>
-              <div class="col m6">
-                <div id="volRange"></div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="center"><a class="btn waves-effect light-blue darken-4" id="closeConfig">Aceptar</a></div>
-            </div>
-          </form>
         </div>
-      </div>
     </div>
     <!-- ++++ +++++++++++++++++++ ++++ -->
 
-    <div class="modal" id="iniConf">
-      <div class="modal-content">
-        <div class="row">
-          <form class="col m12">
+    <!-- ++++ Modal Opciones del juego ++++ -->
+    <div class="modal" id="opcIni">
+        <div class="modal-content">
             <div class="row">
-              <div class="col m12"><h4 class="center-align">Iniciar</h4></div>
+                <form class="col m12">
+                    <div class="row">
+                        <!-- Titulo -->
+                        <div class="col m12">
+                            <h4 class="center-align">Opciones</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Dif. Rompecabezas -->
+                        <div class="col m5 offset-m1"><span>Dificultad Rompecabezas:</span></div>
+                        <div class="col m6 valign-wrapper">
+                            <p>
+                                <input class="with-gap" name="dif1" type="radio" id="eas1" checked value="3" />
+                                <label for="eas1">Facil</label>
+                            </p>
+                            <p>
+                                <input class="with-gap" name="dif1" type="radio" id="med1" value="4" />
+                                <label for="med1">Medio</label>
+                            </p>
+                            <p>
+                                <input class="with-gap" name="dif1" type="radio" id="hard1" value="5" />
+                                <label for="hard1">Dificil</label>
+                            </p>
+                            <p class="hide"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Dif. Ecuaciones -->
+                        <div class="col m5 offset-m1"><span>Dificultad Ecuaciones:</span></div>
+                        <div class="col m6 valign-wrapper">
+                            <p>
+                                <input class="with-gap" name="dif2" type="radio" id="eas2" checked value="1" />
+                                <label for="eas2">Facil</label>
+                            </p>
+                            <p>
+                                <input class="with-gap" name="dif2" type="radio" id="med2" value="2" />
+                                <label for="med2">Medio</label>
+                            </p>
+                            <p>
+                                <input class="with-gap" name="dif2" type="radio" id="hard2" value="3" />
+                                <label for="hard2">Dificil</label>
+                            </p>
+                            <p class="hide"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Seleccionar imagen -->
+                        <div class="col m4 offset-m1"><span>Seleccionar Imagen:</span></div>
+                        <div class="col m6">
+                            <div class="file-field input-field">
+                                <div class="btn">
+                                    <i class="material-icons">perm_media</i>
+                                    <input type="file" id="urlimg" accept="image/x-png,image/jpeg">
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input type="text" class="file-path validate">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="row">
-              <div class="col m10 offset-m1">
-                <div class="switch">
-                  <span>Efectos de Sonido </span>
-                  <label>Off <input type="checkbox" checked><span class="lever"></span> On</label>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col m4 offset-m1"><span>Volumen de Sonido</span></div>
-              <div class="col m6">
-                <div id="volRange"></div>
-              </div>
-            </div>
-          </form>
         </div>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-      </div>
+        <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-green btn-flat" id="canGame">Cancelar</a>
+            <a class="modal-action modal-close waves-effect waves-green btn-flat" id="agreGame">Aceptar</a>
+        </div>
     </div>
+    <!-- ++++ ++++++++++++++++++++++++ ++++ -->
+
+    <!-- ++++ Modal Configurar Perfil ++++ -->
+    <div class="modal indigo accent-2" id="Perfil">
+        <div class="modal-content">
+            <div class="row">
+                <form class="col m12">
+                    <div class="row">
+                        <div class="col m12">
+                            <h4 class="center-align">Configuraciones de Usuario</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col m6">
+                            <input type="text" class="validate updb" id="USERNAME">
+                            <label for="USERNAME" class="active">Usuario</label>
+                        </div>
+                        <div class="input-field col m6">
+                            <input type="text" class="validate updb uppercase" id="NOMBRE">
+                            <label for="NOMBRE" class="active">Nombre</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col m6">
+                            <input type="text" class="validate updb uppercase" id="AP_PAT">
+                            <label for="AP_PAT" class="active">Ape. Paterno</label>
+                        </div>
+                        <div class="input-field col m6">
+                            <input type="text" class="validate updb uppercase" id="AP_MAT">
+                            <label for="AP_MAT" class="active">Ape. Materno</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col m4">
+                            <input type="password" class="validate" id="PWORD">
+                            <label for="PWORD" class="active">Contraseña</label>
+                        </div>
+                        <div class="input-field col m4">
+                            <input type="password" class="validate" id="PWORDN">
+                            <label for="PWORDN" class="active">Contraseña nueva</label>
+                        </div>
+                        <div class="input-field col m4">
+                            <input type="password" class="validate" id="PWORDCN">
+                            <label for="PWORDCN" class="active">Confirmar Contraseña</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer indigo accent-2">
+            <a class="modal-action waves-effect waves-green btn-flat" id="noSave">Cancelar</a>
+            <a class="modal-action waves-effect waves-green btn-flat" id="save">Aceptar</a>
+        </div>
+    </div>
+    <!-- ++++ +++++++++++++++++++++++ ++++ -->
 
     <!-- ++++ Scripts ++++ -->
-    <script>window.$ = window.jQuery = require('jquery');</script>
-    <script>window.$.Velocity=window.jQuery.Velocity=require("materialize-css/js/velocity.min.js");</script>
-    <script>require('../materialize/js/materialize.min.js')</script>
-    <script>require('../noUiSlider/nouislider.min.js')</script>
-    <script>require('../js/intro-init.js')</script>
-  </body>
+    <script>
+        window.$ = window.jQuery = require('jquery');
+    </script>
+    <script>
+        window.$.Velocity = window.jQuery.Velocity = require("materialize-css/js/velocity.min.js");
+    </script>
+    <script>
+        require('../materialize/js/materialize.min.js')
+    </script>
+    <script>
+        require('../js/Events/indexInit.js')
+    </script>
+    <script>
+        require('../js/Events/configInit.js')
+    </script>
+    <script>
+        require('../js/renderProcess/render.js')
+    </script>
+</body>
+
 </html>

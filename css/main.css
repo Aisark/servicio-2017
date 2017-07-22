@@ -1,224 +1,273 @@
-
 /****  General  ****/
-html,body{
-  width: 100%;
-  height: 100%;
-  background-image: url("../img/main_fondo_03.jpg");
-  background-size: 100% 100%;
-}
-.row{
-  margin-bottom: 0px;
-}
-.col{
-  padding: 0px 0px !important;
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/main_fondo_03.jpg");
+    background-size: 100% 100%;
 }
 
-#f1{
-  height: 15%;
-  width: 100%;
-  z-index: 0;
-  position: absolute;
+nav {
+    background-color: transparent;
+    box-shadow: 0 0 0 0;
 }
-#f2{
-  top: 15%;
-  height: 85%;
-  width: 100%;
-  position: absolute;
-  z-index: 0;
+
+.row {
+    margin-bottom: 0px;
 }
+
+.col {
+    padding: 0px 0px !important;
+}
+
+#f1 {
+    height: 15%;
+    width: 100%;
+    z-index: 0;
+    position: absolute;
+}
+
+#f2 {
+    top: 15%;
+    height: 85%;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+}
+
 
 /**** Botones Cerrar y Actualizar ****/
-.btnMain{
-  margin-top: 3%;
-}
-.btnMain a{
-  margin-right: 4%;
-  background-color:  rgba(0, 0, 0, 0) !important;
-  box-shadow: 0 0 0 0 !important;
-}
-.btnMain a:hover + i{
-  color: red;
+
+.btnMain {
+    margin-top: 3%;
 }
 
+.btnMain a {
+    margin-right: 4%;
+    background-color: rgba(0, 0, 0, 0) !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+.btnMain a:hover+i {
+    color: red;
+}
+
+
 /**** Respuestas ****/
-#answer{
-  width: 35%;
-  height: 60%;
+
+#answer {
+    width: 35%;
+    height: 60%;
 }
-#answer .card-panel{
-  margin: 0px;
-  padding: 0px;
-  height: 100%;
-  width: 80%;
-  margin-top: 10%;
-  margin-left: 15%;
-  background-image: url('../img/pencil_student.jpg');
-  background-size: 100% 100%;
+
+#answer .card-panel {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 80%;
+    margin-top: 10%;
+    margin-left: 15%;
+    background-image: url('../img/pencil_student.jpg');
+    background-size: 100% 100%;
 }
-#instr{
-  background-image: url('../img/material_green.png');
+
+#instr {
+    background-image: url('../img/material_green.png');
 }
-#instr h5{
-  font-family: "TheConsion";
-  margin-bottom: 0px;
-  letter-spacing: -.03em;
-  font-weight: 200;
-  margin-left: 5%;
-  margin-top: 10%;
-  font-size: 220%;
+
+#instr h5 {
+    font-family: "TheConsion";
+    margin-bottom: 0px;
+    letter-spacing: -.03em;
+    font-weight: 200;
+    margin-left: 5%;
+    margin-top: 10%;
+    font-size: 220%;
 }
-#formula{
-  width: 90%;
-  margin-left: 5%;
+
+#formula {
+    width: 90%;
+    margin-left: 5%;
 }
-#formula h5{
-  font-size: 2.5em;
-  font-weight: 900;
-  font-family: "Mathematical";
+
+#formula h5 {
+    font-size: 2.5em;
+    font-weight: 900;
+    font-family: "Mathematical";
 }
-#igual{
-  margin: 0em .4em;
+
+#igual {
+    margin: 0em .4em;
 }
-#formulario , #btnEvents{
-  width: 80%;
-  margin-left: 10%;
-  margin-top: 5%;
+
+#formulario,
+#btnEvents {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
 }
-#formulario .input-field{
-  width: 40%;
-  margin-right: 2%;
+
+#formulario .input-field {
+    width: 40%;
+    margin-right: 2%;
 }
-#formulario .boton, .good-bad{
-  width: 15%;
+
+#formulario .boton,
+.good-bad {
+    width: 15%;
 }
-#formulario .good-bad{
-  margin-left: 8%;
+
+#formulario .good-bad {
+    margin-left: 8%;
 }
-#btnEvents a{
-  padding: 0 1em;
+
+#btnEvents a {
+    padding: 0 1em;
 }
-#formulario .m4{
-  margin-top: 0px;
+
+#formulario .m4 {
+    margin-top: 0px;
 }
-.input-field label{
-  color: #4a148c;
-  font-size: 1.5em;
+
+.input-field label {
+    color: #4a148c;
+    font-size: 1.5em;
 }
-.input-field input[type=text]{
-  border-bottom-color: #4a148c;
-  box-shadow: 0 1px 0 0 #4a148c;
+
+.input-field input[type=text] {
+    border-bottom-color: #4a148c;
+    box-shadow: 0 1px 0 0 #4a148c;
 }
-.input-field input[type=text]:disabled + label {
-  color: #4a148c;
+
+.input-field input[type=text]:disabled+label {
+    color: #4a148c;
 }
-.input-field input[type=text]:focus + label {
-  color: #b71c1c;
+
+.input-field input[type=text]:focus+label {
+    color: #b71c1c;
 }
-.input-field input[type=text]:focus{
-  border-bottom-color: #b71c1c;
-  border-bottom: 2px solid  #b71c1c !important;
-  box-shadow: 0 1px 0 0 #b71c1c;
+
+.input-field input[type=text]:focus {
+    border-bottom-color: #b71c1c;
+    border-bottom: 2px solid #b71c1c !important;
+    box-shadow: 0 1px 0 0 #b71c1c;
 }
 
 @media (max-width:1275px) {
-  #formula h5{
-    font-size: 1em;
-    font-weight: 400;
-  }
-  #instr h5{
-    font-size: 1.3em;
-  }
+    #formula h5 {
+        font-size: 1em;
+        font-weight: 400;
+    }
+    #instr h5 {
+        font-size: 1.3em;
+    }
 }
+
 @media (max-width:900px) {
-  #formula h5{
-    font-size: .8em;
-    font-weight: 400;
-  }
-  #instr h5{
-    font-size: 1em;
-  }
+    #formula h5 {
+        font-size: .8em;
+        font-weight: 400;
+    }
+    #instr h5 {
+        font-size: 1em;
+    }
 }
+
 
 /**** Canvas y Score****/
-#Canvas{
-  width: 65%;
-  height: 100%;
-}
-#lienzo{
-  width: 100%;
-  height: 80%;
-}
-#canvas{
-  margin-left: 10px;
-  margin-top: 10px;
+
+#Canvas {
+    width: 65%;
+    height: 100%;
 }
 
-#puntaje{
-  width: 100%;
-  height: 20%;
-}
-#puntaje .col{
-  height: 100%;
-  width: 50%;
-}
-#puntaje .col .card-panels{
-  height: 90%;
-  width: 95%;
-  margin-left: 2.5%;
-  margin-top: 2.5%;
-  margin-bottom: 0px;
-  padding: 0px;
-  background-color: transparent;
-}
-#score{
-  padding-left: 5% !important;
-}
-#intentos{
-  padding-left: 5% !important;
-}
-#Canvas .valign-wrapper h5{
-  margin: 0px;
-  padding-top: 3%;
-  padding-left: 5%;
-  font-size: 1.64rem;
-}
-#Canvas .valign-wrapper{
-  height: 50%;
-  width: 100%
-}
-#Canvas .valign-wrapper  h4{
-  margin: 0px;
-  padding-top: 3%;
-  padding-left: 20%;
-  font-size: 2.28rem;
+#lienzo {
+    width: 100%;
+    height: 80%;
 }
 
-@media (max-width:1275px){
-  #Canvas .valign-wrapper  h4{
-    font-size: 2rem;
-  }
-  #Canvas .valign-wrapper h5{
-    font-size: 1.36rem;
-  }
+#canvas {
+    margin-left: 10px;
+    margin-top: 10px;
 }
+
+#puntaje {
+    width: 100%;
+    height: 20%;
+}
+
+#puntaje .col {
+    height: 100%;
+    width: 50%;
+}
+
+#puntaje .col .card-panels {
+    height: 90%;
+    width: 95%;
+    margin-left: 2.5%;
+    margin-top: 2.5%;
+    margin-bottom: 0px;
+    padding: 0px;
+    background-color: transparent;
+}
+
+#score {
+    padding-left: 5% !important;
+}
+
+#intentos {
+    padding-left: 5% !important;
+}
+
+#Canvas .valign-wrapper h5 {
+    margin: 0px;
+    padding-top: 3%;
+    padding-left: 5%;
+    font-size: 1.64rem;
+}
+
+#Canvas .valign-wrapper {
+    height: 50%;
+    width: 100%
+}
+
+#Canvas .valign-wrapper h4 {
+    margin: 0px;
+    padding-top: 3%;
+    padding-left: 20%;
+    font-size: 2.28rem;
+}
+
+@media (max-width:1275px) {
+    #Canvas .valign-wrapper h4 {
+        font-size: 2rem;
+    }
+    #Canvas .valign-wrapper h5 {
+        font-size: 1.36rem;
+    }
+}
+
 @media (max-width:900px) {
-  #Canvas .valign-wrapper  h4{
-    font-size: 1.6rem;
-
-  }
-  #Canvas .valign-wrapper h5{
-    font-size: 1.16rem;
-  }
+    #Canvas .valign-wrapper h4 {
+        font-size: 1.6rem;
+    }
+    #Canvas .valign-wrapper h5 {
+        font-size: 1.16rem;
+    }
 }
+
 
 /**** Canvas Confeti ****/
+
 #confeti {
-  display: block;
-  position: relative;
-  z-index: 2;
-  pointer-events: none;
-  height: 100%;
-  width: 100%;
+    display: block;
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+    height: 100%;
+    width: 100%;
 }
+
 
 /*----------------------------------*/

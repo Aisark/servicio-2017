@@ -1,95 +1,158 @@
 /* Love Ya Like A Sister **/
+
 @font-face {
-  font-family: 'Love Ya Like A Sister';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Love Ya Like A Sister Regular'), local('LoveYaLikeASister-Regular'), url("../fonts/LoveYaLikeASister.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+    font-family: 'Love Ya Like A Sister';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Love Ya Like A Sister Regular'), local('LoveYaLikeASister-Regular'), url("../fonts/LoveYaLikeASister.woff2") format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
+
+
 /* Material Icons */
+
 @font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Material Icons'), local('MaterialIcons-Regular'), url("../materialize/MaterialIcons.woff2") format('woff2');
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Material Icons'), local('MaterialIcons-Regular'), url("../materialize/MaterialIcons.woff2") format('woff2');
 }
+
 
 /* ++++ Fuentes Matematicas ++++*/
 
+
 /*- ThousandReasons **/
+
 @font-face {
-  font-family: "ThousandReasons";
-  src: url("../fonts/kg_ten_thousand_reasons/KGTenThousandReasons.ttf");
+    font-family: "ThousandReasons";
+    src: url("../fonts/kg_ten_thousand_reasons/KGTenThousandReasons.ttf");
 }
+
+
 /* TheConsion **/
+
 @font-face {
-  font-family: "TheConsion";
-  src: url("../fonts/geelynedits_the-confession-fonts/The_Confession.ttf");
+    font-family: "TheConsion";
+    src: url("../fonts/geelynedits_the-confession-fonts/The_Confession.ttf");
 }
+
+
 /* GoldenRatio */
+
 @font-face {
-  font-family: "GoldenRatio";
-  src: url("../fonts/valentin-françois_golden-ratio-demo/GoldenRatio-Demo.otf");
+    font-family: "GoldenRatio";
+    src: url("../fonts/valentin-françois_golden-ratio-demo/GoldenRatio-Demo.otf");
 }
+
+
 /* Mathematical **/
+
 @font-face {
-  font-family: "Mathematical";
-  src: url("../fonts/mathematical/Mathematical Bold.ttf");
+    font-family: "Mathematical";
+    src: url("../fonts/mathematical/Mathematical Bold.ttf");
 }
 
 .material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -moz-font-feature-settings: 'liga';
-  -moz-osx-font-smoothing: grayscale;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale;
 }
+
 
 /* Titulos del canvas */
-#Canvas h4, #Canvas h5{
-  font-family: 'ThousandReasons';
-  text-shadow: .1em .1em 0.2em rgba(0, 0, 0,1);
+
+#Canvas h4,
+#Canvas h5 {
+    font-family: 'ThousandReasons';
+    text-shadow: .1em .1em 0.2em rgba(0, 0, 0, 1);
 }
 
-/* Fuente de letra del titulo del modal registro */
-#registro h4, #configs h4{
-  font-family: 'TheConsion';
-  font-size: 3em;
-  color: white;
-  text-shadow: .1em .1em 0.2em rgba(0, 0, 0,1);
+
+/* Fuente de letra del titulo del modal*/
+
+#registro h4,
+#configs h4,
+#opcIni h4,
+#Perfil h4 {
+    font-family: 'TheConsion';
+    font-size: 3em;
+    color: white;
+    text-shadow: .1em .1em 0.2em rgba(0, 0, 0, 1);
 }
+
 
 /* Titulo de la pantalla inicial */
-#banner{
-  font-size: 5em;
-  font-weight: 300;
-  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2);
-  color: #76ff03;
-  font-family: 'TheConsion';
-  text-shadow: .1em .1em 0.2em rgba(0, 0, 0,1);
+
+#banner {
+    font-size: 5em;
+    font-weight: 300;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2);
+    color: #76ff03;
+    font-family: 'TheConsion';
+    text-shadow: .1em .1em 0.2em rgba(0, 0, 0, 1);
 }
 
+
 /* Fuentes para letras del modal configuraciones */
+
 #configs form .row .col:first-child span:first-child {
-  margin-right: 1em;
-  font-family: 'Mathematical';
-  font-size: 2.2em;
-  color: white;
-  text-shadow: .1em .1em 0.2em rgba(0, 0, 0,1);
+    margin-right: 1em;
+    font-family: 'Mathematical';
+    font-size: 2.2em;
+    color: white;
+    text-shadow: .1em .1em 0.2em rgba(0, 0, 0, 1);
 }
-#configs .switch label{
-  font-family: 'ThousandReasons';
-  font-size: 1em;
-  color: white;
-  text-shadow: .1em .1em 0.2em rgba(0, 0, 0,1);
+
+#configs .switch label {
+    font-family: 'ThousandReasons';
+    font-size: 1em;
+    color: white;
+    text-shadow: .1em .1em 0.2em rgba(0, 0, 0, 1);
+}
+
+
+/* Fuentes para letras del modal opciones del juego */
+
+#opcIni span {
+    font-family: 'Mathematical';
+    font-size: 2.2em;
+    color: white;
+    text-shadow: .1em .1em 0.2em rgba(0, 0, 0, 1);
+}
+
+#opcIni .row p label {
+    color: white;
+    text-shadow: .1em .1em 0.2em rgba(0, 0, 0, 1);
+}
+
+
+/* Fuentes de letras Login */
+
+@media only screen and (min-width: 601px) {
+    #tabsSwipe li a {
+        font-size: .32em !important;
+    }
+}
+
+#tabsSwipe li {
+    font-size: 4em;
+    font-family: 'GoldenRatio';
+}
+
+li .active {
+    color: white !important;
+    text-shadow: 0.1em 0.1em 0.2em rgba(41, 39, 39, 1);
 }
 
 
