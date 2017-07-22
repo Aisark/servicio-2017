@@ -3,3 +3,4 @@ videos
 *.mp4
 Quix-release-build
 *.db
+Users.db
