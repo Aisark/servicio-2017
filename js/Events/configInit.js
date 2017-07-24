@@ -215,7 +215,7 @@ $('#agreGame').on('click', function() {
     var nPuzz = $('input:radio[name=dif1]:checked').val(),
         nEcua = $('input:radio[name=dif2]:checked').val(),
         _url = document.getElementById('urlimg').files,
-        urlImg = (_url.length !== 0) ? url[0].path : ""
+        urlImg = (_url.length !== 0) ? _url[0].path : ""
 
     config.setItemObject(nPuzz, 'lvlPuzz')
     config.setItemObject(nEcua, 'lvlEcua')
