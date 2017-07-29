@@ -9,7 +9,7 @@
     <link href="../css/main.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="../css/fonts.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
-    <link href="../css/modals_style.css" type="text/css" rel="stylesheet" />
+    <link href="../css/modals.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="../css/animate.css">
 </head>
 
@@ -63,7 +63,7 @@
                         <a id="tips" href="#tipsM" class="btn red darken-1 tips hide">Tips</a>
                     </div>
                     <div class="col s12 m6 next">
-                        <a id="siguiente" href="#solucionM" class="btn  indigo darken-1 hide">Ver solución</a>
+                        <a id="siguiente" href="#modalXp" class="btn  indigo darken-1 hide">Ver solución</a>
                     </div>
                 </div>
                 <!-- ++++++++++++++++++++++++++++++++++++++++++++++ -->
@@ -113,82 +113,120 @@
     <audio id="efecto" class="hide"></audio>
     <!-- +++++++++++++++++++++++++++++ -->
 
-    <!-- ++++ Modal de Solucion paso a paso ++++ -->
-    <div class="modal modal-fixed-footer" id="solucionM">
-        <div id="modalTitle">
-            <h3 class="center-align white-text modtitle">Solución</h3>
+    <!-- ++++ Modal Solucion ++++ -->
+    <div class="modal" id="modalXp">
+        <div class="valign-wrapper title indigo accent-2">
+            <h3 class="left-align white-text">Consejos para Solucinar la ecuacion</h3>
+            <i class="material-icons modal-close">close</i>
         </div>
-        <div class="modal-content">
+        <div class="modal-content blue">
             <div class="row">
-                <ul id="pasosUl" class="collapsible popout col m10" data-collapsible="accordion">
-                    <li class="active">
-                        <div class="collapsible-header active"><i class="material-icons">mode_edit</i></div>
-                        <div class="collapsible-body">
-                            <div class="row">
-                                <h5>De la función:</h5>
+                <div class="col m12">
+                    <ul class="tabs indigo accent-2">
+                        <li class="tab col m2 offset-m1">
+                            <a class="active" href="#step1">1</a>
+                        </li>
+                        <li class="tab col m2 ">
+                            <a href="#step2">2</a>
+                        </li>
+                        <li class="tab col m2">
+                            <a href="#step3">3</a>
+                        </li>
+                        <li class="tab col m2">
+                            <a href="#step4">4</a>
+                        </li>
+                        <li class="tab col m2">
+                            <a href="#step5">5</a>
+                        </li>
+                    </ul>
+                    <div id="step1" class="col m12 panels">
+                        <div class="row">
+                            <div class="col m10 offset-m1">
+                                <div class="card-panel animated zoomIn">
+                                    <span class="white-text tip1"></span>
+                                </div>
                             </div>
-                            <div class="row"><span id="solFun"></span></div>
                         </div>
-                    </li>
-                    <li class="hide active">
-                        <div class="collapsible-header"><i class="material-icons">mode_edit</i></div>
-                        <div class="collapsible-body">
-                            <div class="row">
-                                <h5>Sumar terminos semejantes.</h5>
+                        <div class="row">
+                            <div class="col m10 offset-m1">
+                                <h5 class="center-align animated fadeInLeft tip1"></h5>
                             </div>
-                            <span id="solTerSem"></span>
                         </div>
-                    </li>
-                    <li class="hide active">
-                        <div class="collapsible-header"><i class="material-icons">mode_edit</i></div>
-                        <div class="collapsible-body">
-                            <div class="row">
-                                <h5>Reune terminos semejantes entre los miembros 1 y 2 </h5>
+                    </div>
+                    <div id="step2" class="col m12 panels">
+                        <div class="row">
+                            <div class="col m10 offset-m1">
+                                <div class="card-panel animated zoomIn">
+                                    <span class="white-text tip2"></span>
+                                </div>
                             </div>
-                            <span id="reunTerm"></span>
                         </div>
-                    </li>
-                    <li class="hide active">
-                        <div class="collapsible-header"><i class="material-icons">mode_edit</i></div>
-                        <div class="collapsible-body">
-                            <div class="row">
-                                <h5>Sumando y Restando terminos semejantes</h5>
+                        <div class="row">
+                            <div class="col m10 offset-m1">
+                                <h5 class="center-align animated fadeInLeft tip2"></h5>
                             </div>
-                            <span id="sumTS"></span>
                         </div>
-                    </li>
-                    <li class="hide active">
-                        <div class="collapsible-header"><i class="material-icons">mode_edit</i></div>
-                        <div class="collapsible-body">
-                            <div class="row">
-                                <h5>Despejando X:</h5>
+                    </div>
+                    <div id="step3" class="col m12 panels">
+                        <div class="row">
+                            <div class="col m10 offset-m1">
+                                <div class="card-panel animated zoomIn">
+                                    <span class="white-text tip3"></span>
+                                </div>
                             </div>
-                            <span id="resX"></span>
                         </div>
-                    </li>
-                </ul>
-                <div class="col s2">
-                    <a id="nextStep" class="btn-floating btn-large waves-effect waves-light red "><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        <div class="row">
+                            <div class="col m10 offset-m1">
+                                <h5 class="center-align animated fadeInLeft tip3"></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="step4" class="col m12 panels">
+                        <div class="row">
+                            <div class="col m10 offset-m1">
+                                <div class="card-panel animated zoomIn">
+                                    <span class="white-text tip4"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col m10 offset-m1">
+                                <h5 class="center-align animated fadeInLeft tip4"></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="step5" class="col m12 panels">
+                        <div class="row">
+                            <div class="col m10 offset-m1">
+                                <div class="card-panel animated zoomIn">
+                                    <span class="white-text tip5"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col m10 offset-m1">
+                                <h5 class="center-align animated fadeInLeft tip5"></h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="modal-footer">
-            <a id="closeSM" class="modal-action modal-close btn-flat">Cerrar</a>
-        </div>
     </div>
-    <!-- +++++++++++++++++++++++++++++++++++++++ -->
+    <!-- ++++++++++++++++++++++++++++ -->
 
     <!-- ++++ Modal de Video Tip ++++ -->
     <div class="modal" id="tipsM">
-        <div id="modalTitle">
-            <h3 class="center-align white-text modtitle">Video Tips</h3>
+        <div class="valign-wrapper title red darken-2">
+            <h3 class="left-align white-text">Tips</h3>
+            <i class="material-icons modal-close">close</i>
         </div>
-        <div class="modal-content">
-            <video id="vTutorial" controls class="responsive-video">
-          <source src="../videos/video_01.mp4" type="video/mp4">
-        </video>
+        <div id="video">
+            <video id="vTutorial" controls>
+                <source src="../videos/video_01.mp4" type="video/mp4">
+            </video>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer hide">
             <a id="closeTM" class="modal-action modal-close btn-flat">Cerrar</a>
         </div>
     </div>
