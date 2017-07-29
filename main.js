@@ -27,9 +27,9 @@ function createWindow(width, height) {
         })
         //maximiza la ventana
     win.setResizable(false);
+    //win.webContents.openDevTools()
 
     win.on('closed', () => {
-        dbsql.close()
         win = null
     })
 }
@@ -54,6 +54,7 @@ function logwindow() {
         }, 500)
     })
 
+    //logwin.webContents.openDevTools()
     logwin.loadURL(url.format({
         //__dirname: direccion completa de la carpeta del projecto ejem: /home/aisark/Escritorio/servicio-2017
         pathname: path.join(__dirname, 'templates/login.html'), //<----- ruta de los archivos html
@@ -61,7 +62,6 @@ function logwindow() {
         slashes: true
     }))
     logwin.on('closed', () => {
-        dbsql.close()
         var url = win.webContents.getURL()
         if (url == '' || url == undefined || url == null) {
             win.close()

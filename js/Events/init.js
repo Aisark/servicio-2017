@@ -1,11 +1,14 @@
 const btn = require('../../js/Events/btn.js');
-const proceso = require('../../js/Equations/procSolucion');
 const pasos = require('../../js/Equations/pasos.js');
 const config = require('../../modulos/config.js')
 const str = require('../../modulos/format.js');
 
+var _video = document.getElementById('vTutorial')
+
 function modals() {
     $('#tipsM').modal({
+        opacity: .8,
+        dismissible: false,
         complete: function() { _video.pause() },
         ready: function() {
             setTimeout(function() {
@@ -13,12 +16,9 @@ function modals() {
             }, 1000);
         }
     })
-    $('#solucionM').modal({
-        ready: function() { proceso.procSol() },
-        complete: function() {
-            btn.updateEcua()
-            pasos.resetSteps();
-        }
+    $('#modalXp').modal({
+        opacity: .3,
+        ready: function() { $('ul.tabs').tabs(); }
     })
 }
 
@@ -36,7 +36,7 @@ function loadUser() {
 
 $(document).ready(function() {
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    var _video = document.getElementById('vTutorial')
     modals()
     loadObj()
+    $('ul.tabs').tabs();
 });

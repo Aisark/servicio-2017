@@ -36,7 +36,8 @@ function sendAnswer() {
  **/
 function checkAnswer() {
     var reciAns
-    var resl = (res.getData('c') / res.getData('x')).toFixed(2)
+    var solu = res.getData('res')
+    var resl = (solu[0] / solu[1]).toFixed(2)
     var ans = $('#respuestas').val()
 
     if (ans.includes('/')) {
@@ -44,10 +45,9 @@ function checkAnswer() {
         reciAns = (parseInt(divs[0]) / parseInt(divs[1])).toFixed(2)
     } else {
         reciAns = (parseFloat(ans)).toFixed(2)
-        console.log(reciAns + '=' + resl);
     }
 
-
+    console.log(reciAns + '=' + resl);
     return (resl == reciAns) ? true : false
 
 }
