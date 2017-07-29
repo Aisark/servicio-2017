@@ -39,7 +39,6 @@ function effectSound(src, vol) {
 
 function init() {
     config.getOBjc().then(function() {
-        console.log();
         _src = (config.getItemObj('urlImg') == "") ? '../img/img-3.jpg' : config.getItemObj('urlImg')
         _img = new Image()
         _img.addEventListener('load', onImage, false)
