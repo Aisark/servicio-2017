@@ -1,7 +1,7 @@
-const btn = require('../../js/Events/btn.js');
-const pasos = require('../../js/Equations/pasos.js');
+const btn = require('../../js/Events/btn.js')
 const config = require('../../modulos/config.js')
-const str = require('../../modulos/format.js');
+const str = require('../../modulos/format.js')
+const solu = require('../../js/Equations/solucion.js')
 
 var _video = document.getElementById('vTutorial')
 
@@ -18,7 +18,12 @@ function modals() {
     })
     $('#modalXp').modal({
         opacity: .3,
-        ready: function() { $('ul.tabs').tabs(); }
+        dismissible: false,
+        ready: function() {
+            $('ul.tabs').tabs();
+            solu.showContent()
+        },
+        complete: function() { solu.reset() }
     })
 }
 

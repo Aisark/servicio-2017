@@ -117,7 +117,7 @@
     <div class="modal" id="modalXp">
         <div class="valign-wrapper title indigo accent-2">
             <h3 class="left-align white-text">Consejos para Solucinar la ecuacion</h3>
-            <i class="material-icons modal-close">close</i>
+            <i class="material-icons modal-close hide">close</i>
         </div>
         <div class="modal-content blue">
             <div class="row">
@@ -126,86 +126,114 @@
                         <li class="tab col m2 offset-m1">
                             <a class="active" href="#step1">1</a>
                         </li>
-                        <li class="tab col m2 ">
-                            <a href="#step2">2</a>
+                        <li class="tab col m2">
+                            <a class="hide" href="#step2">2</a>
                         </li>
                         <li class="tab col m2">
-                            <a href="#step3">3</a>
+                            <a class="hide" href="#step3">3</a>
                         </li>
                         <li class="tab col m2">
-                            <a href="#step4">4</a>
+                            <a class="hide" href="#step4">4</a>
                         </li>
                         <li class="tab col m2">
-                            <a href="#step5">5</a>
+                            <a class="hide" href="#step5">5</a>
                         </li>
                     </ul>
                     <div id="step1" class="col m12 panels">
                         <div class="row">
                             <div class="col m10 offset-m1">
-                                <div class="card-panel animated zoomIn">
+                                <div class="card-panel animated zoomIn hide ">
                                     <span class="white-text tip1"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col m10 offset-m1">
-                                <h5 class="center-align animated fadeInLeft tip1"></h5>
+                                <h5 class="center-align animated fadeInLeft hide tip1 "></h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col m2 offset-m5 nTip1">
+                                <a class="btn btn-floating btn-large cyan animated infinite pulse hide ">
+                                    <i class="material-icons">keyboard_arrow_right</i>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <div id="step2" class="col m12 panels">
                         <div class="row">
                             <div class="col m10 offset-m1">
-                                <div class="card-panel animated zoomIn">
+                                <div class="card-panel animated zoomIn hide ">
                                     <span class="white-text tip2"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col m10 offset-m1">
-                                <h5 class="center-align animated fadeInLeft tip2"></h5>
+                                <h5 class="center-align animated fadeInLeft hide tip2 "></h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col m2 offset-m5 nTip2">
+                                <a class="btn btn-floating btn-large cyan animated infinite pulse hide ">
+                                    <i class="material-icons">keyboard_arrow_right</i>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <div id="step3" class="col m12 panels">
                         <div class="row">
                             <div class="col m10 offset-m1">
-                                <div class="card-panel animated zoomIn">
+                                <div class="card-panel animated zoomIn hide ">
                                     <span class="white-text tip3"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col m10 offset-m1">
-                                <h5 class="center-align animated fadeInLeft tip3"></h5>
+                                <h5 class="center-align animated fadeInLeft hide tip3 "></h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col m2 offset-m5 nTip3">
+                                <a class="btn btn-floating btn-large cyan animated infinite pulse hide ">
+                                    <i class="material-icons">keyboard_arrow_right</i>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <div id="step4" class="col m12 panels">
                         <div class="row">
                             <div class="col m10 offset-m1">
-                                <div class="card-panel animated zoomIn">
+                                <div class="card-panel animated zoomIn hide ">
                                     <span class="white-text tip4"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col m10 offset-m1">
-                                <h5 class="center-align animated fadeInLeft tip4"></h5>
+                                <h5 class="center-align animated fadeInLeft hide tip4 "></h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col m2 offset-m5 nTip4">
+                                <a class="btn btn-floating btn-large cyan animated infinite pulse hide ">
+                                    <i class="material-icons">keyboard_arrow_right</i>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <div id="step5" class="col m12 panels">
                         <div class="row">
                             <div class="col m10 offset-m1">
-                                <div class="card-panel animated zoomIn">
+                                <div class="card-panel animated zoomIn hide ">
                                     <span class="white-text tip5"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col m10 offset-m1">
-                                <h5 class="center-align animated fadeInLeft tip5"></h5>
+                                <h5 class="center-align animated fadeInLeft hide tip5 "></h5>
                             </div>
                         </div>
                     </div>
@@ -225,9 +253,6 @@
             <video id="vTutorial" controls>
                 <source src="../videos/video_01.mp4" type="video/mp4">
             </video>
-        </div>
-        <div class="modal-footer hide">
-            <a id="closeTM" class="modal-action modal-close btn-flat">Cerrar</a>
         </div>
     </div>
     <!-- ++++++++++++++++++++++++++++ -->
@@ -260,9 +285,6 @@
     </script>
     <script>
         window.btn = require('../js/Events/btn.js')
-    </script>
-    <script>
-        require('../js/Equations/pasos.js')
     </script>
     <script>
         require('../js/renderProcess/render.js');
