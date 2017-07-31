@@ -17,7 +17,7 @@
         "sqlite3": "^3.1.8"
     },
     "scripts": {
-        "pack-app-win": "node package-win.js",
+        "app-win": "node package-win.js",
         "start": "electron .",
         "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
         "package-linux": "electron-packager . --overwrite --platform=linux --arch=x64 --icon=icons/1024x1024.png --prune=true --out=release-builds"
@@ -31,6 +31,6 @@
     "bugs": {
         "url": "https://github.com/DarkSylar117/servicio-2017/issues"
     },
-    "homepage": "https://github.com/DarkSylar117/servicio-2017#readme",
+    "homepage": "https://github.com/Aisark/servicio-2017#readme",
     "description": ""
 }

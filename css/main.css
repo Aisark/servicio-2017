@@ -36,6 +36,14 @@ nav {
     z-index: 0;
 }
 
+#closeBrows:hover {
+    background-color: rgba(208, 21, 21, 0.67);
+}
+
+.desabilitado {
+    pointer-events: none;
+}
+
 
 /**** Botones Cerrar y Actualizar ****/
 

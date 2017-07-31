@@ -9,18 +9,18 @@
     <link href="../css/main.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="../css/fonts.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
-    <link href="../css/modals_style.css" type="text/css" rel="stylesheet" />
+    <link href="../css/modals.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="../css/animate.css">
 </head>
 
-<body>
+<body class="habilitado">
     <!-- ++++ Indefinido ++++ -->
     <div class="row" id="f1">
         <nav>
             <div class="nav-wrapper redBack">
                 <ul class="right">
                     <li><a id="minimizar"><i class="material-icons">remove</i></a></li>
-                    <li class="hide"><a id="reload"><i class="material-icons">refresh</i></a></li>
+                    <li><a href="#finScore"><i class="material-icons">refresh</i></a></li>
                     <li><a id="closeBrows"><i class="material-icons">close</i></a></li>
                 </ul>
             </div>
@@ -63,7 +63,7 @@
                         <a id="tips" href="#tipsM" class="btn red darken-1 tips hide">Tips</a>
                     </div>
                     <div class="col s12 m6 next">
-                        <a id="siguiente" href="#solucionM" class="btn  indigo darken-1 hide">Ver solución</a>
+                        <a id="siguiente" href="#modalXp" class="btn  indigo darken-1 hide">Ver solución</a>
                     </div>
                 </div>
                 <!-- ++++++++++++++++++++++++++++++++++++++++++++++ -->
@@ -76,12 +76,11 @@
                 <div class="col m6 s6">
                     <div class="card-panels white-text">
                         <div class="valign-wrapper">
-                            <h5 id="nombre"></h5>
-                            <h5 id="semestre">6 sem.</h5>
+                            <h5 id="nombre" class="nombre"></h5>
                         </div>
                         <div class="valign-wrapper">
                             <h5 id="lblRes">Total Resueltas:</h5>
-                            <h5 id="resueltas">00</h5>
+                            <h5 id="resueltas" class="resueltas">00</h5>
                         </div>
                     </div>
                 </div>
@@ -89,7 +88,7 @@
                     <div class="card-panels white-text">
                         <div class="valign-wrapper">
                             <h4>Score :</h4>
-                            <h4 id="score">00 Exp</h4>
+                            <h4 id="score" class="score">00 Exp</h4>
                         </div>
                         <div class="valign-wrapper">
                             <h4>Movimientos:</h4>
@@ -113,99 +112,185 @@
     <audio id="efecto" class="hide"></audio>
     <!-- +++++++++++++++++++++++++++++ -->
 
-    <!-- ++++ Modal de Solucion paso a paso ++++ -->
-    <div class="modal modal-fixed-footer" id="solucionM">
-        <div id="modalTitle">
-            <h3 class="center-align white-text modtitle">Solución</h3>
+    <!-- ++++ Modal Solucion ++++ -->
+    <div class="modal" id="modalXp">
+        <div class="valign-wrapper title indigo accent-2">
+            <h3 class="left-align white-text">Consejos para Solucinar la ecuacion</h3>
+            <i class="material-icons modal-close hide">close</i>
         </div>
-        <div class="modal-content">
+        <div class="modal-content blue">
             <div class="row">
-                <ul id="pasosUl" class="collapsible popout col m10" data-collapsible="accordion">
-                    <li class="active">
-                        <div class="collapsible-header active"><i class="material-icons">mode_edit</i></div>
-                        <div class="collapsible-body">
-                            <div class="row">
-                                <h5>De la función:</h5>
+                <div class="col m12">
+                    <ul class="tabs indigo accent-2">
+                        <li class="tab col m2 offset-m1">
+                            <a class="active" href="#step1">1</a>
+                        </li>
+                        <li class="tab col m2">
+                            <a class="hide" href="#step2">2</a>
+                        </li>
+                        <li class="tab col m2">
+                            <a class="hide" href="#step3">3</a>
+                        </li>
+                        <li class="tab col m2">
+                            <a class="hide" href="#step4">4</a>
+                        </li>
+                        <li class="tab col m2">
+                            <a class="hide" href="#step5">5</a>
+                        </li>
+                    </ul>
+                    <div id="step1" class="col m12 panels">
+                        <div class="row">
+                            <div class="col m10 offset-m1">
+                                <div class="card-panel animated zoomIn hide ">
+                                    <span class="white-text tip1"></span>
+                                </div>
                             </div>
-                            <div class="row"><span id="solFun"></span></div>
                         </div>
-                    </li>
-                    <li class="hide active">
-                        <div class="collapsible-header"><i class="material-icons">mode_edit</i></div>
-                        <div class="collapsible-body">
-                            <div class="row">
-                                <h5>Sumar terminos semejantes.</h5>
+                        <div class="row">
+                            <div class="col m10 offset-m1">
+                                <h5 class="center-align animated fadeInLeft hide tip1 "></h5>
                             </div>
-                            <span id="solTerSem"></span>
                         </div>
-                    </li>
-                    <li class="hide active">
-                        <div class="collapsible-header"><i class="material-icons">mode_edit</i></div>
-                        <div class="collapsible-body">
-                            <div class="row">
-                                <h5>Reune terminos semejantes entre los miembros 1 y 2 </h5>
+                        <div class="row">
+                            <div class="col m2 offset-m5 nTip1">
+                                <a class="btn btn-floating btn-large cyan animated infinite pulse hide ">
+                                    <i class="material-icons">keyboard_arrow_right</i>
+                                </a>
                             </div>
-                            <span id="reunTerm"></span>
                         </div>
-                    </li>
-                    <li class="hide active">
-                        <div class="collapsible-header"><i class="material-icons">mode_edit</i></div>
-                        <div class="collapsible-body">
-                            <div class="row">
-                                <h5>Sumando y Restando terminos semejantes</h5>
+                    </div>
+                    <div id="step2" class="col m12 panels">
+                        <div class="row">
+                            <div class="col m10 offset-m1">
+                                <div class="card-panel animated zoomIn hide ">
+                                    <span class="white-text tip2"></span>
+                                </div>
                             </div>
-                            <span id="sumTS"></span>
                         </div>
-                    </li>
-                    <li class="hide active">
-                        <div class="collapsible-header"><i class="material-icons">mode_edit</i></div>
-                        <div class="collapsible-body">
-                            <div class="row">
-                                <h5>Despejando X:</h5>
+                        <div class="row">
+                            <div class="col m10 offset-m1">
+                                <h5 class="center-align animated fadeInLeft hide tip2 "></h5>
                             </div>
-                            <span id="resX"></span>
                         </div>
-                    </li>
-                </ul>
-                <div class="col s2">
-                    <a id="nextStep" class="btn-floating btn-large waves-effect waves-light red "><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        <div class="row">
+                            <div class="col m2 offset-m5 nTip2">
+                                <a class="btn btn-floating btn-large cyan animated infinite pulse hide ">
+                                    <i class="material-icons">keyboard_arrow_right</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="step3" class="col m12 panels">
+                        <div class="row">
+                            <div class="col m10 offset-m1">
+                                <div class="card-panel animated zoomIn hide ">
+                                    <span class="white-text tip3"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col m10 offset-m1">
+                                <h5 class="center-align animated fadeInLeft hide tip3 "></h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col m2 offset-m5 nTip3">
+                                <a class="btn btn-floating btn-large cyan animated infinite pulse hide ">
+                                    <i class="material-icons">keyboard_arrow_right</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="step4" class="col m12 panels">
+                        <div class="row">
+                            <div class="col m10 offset-m1">
+                                <div class="card-panel animated zoomIn hide ">
+                                    <span class="white-text tip4"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col m10 offset-m1">
+                                <h5 class="center-align animated fadeInLeft hide tip4 "></h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col m2 offset-m5 nTip4">
+                                <a class="btn btn-floating btn-large cyan animated infinite pulse hide ">
+                                    <i class="material-icons">keyboard_arrow_right</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="step5" class="col m12 panels">
+                        <div class="row">
+                            <div class="col m10 offset-m1">
+                                <div class="card-panel animated zoomIn hide ">
+                                    <span class="white-text tip5"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col m10 offset-m1">
+                                <h5 class="center-align animated fadeInLeft hide tip5 "></h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="modal-footer">
-            <a id="closeSM" class="modal-action modal-close btn-flat">Cerrar</a>
-        </div>
-    </div>
-    <!-- +++++++++++++++++++++++++++++++++++++++ -->
-
-    <!-- ++++ Modal de Video Tip ++++ -->
-    <div class="modal" id="tipsM">
-        <div id="modalTitle">
-            <h3 class="center-align white-text modtitle">Video Tips</h3>
-        </div>
-        <div class="modal-content">
-            <video id="vTutorial" controls class="responsive-video">
-          <source src="../videos/video_01.mp4" type="video/mp4">
-        </video>
-        </div>
-        <div class="modal-footer">
-            <a id="closeTM" class="modal-action modal-close btn-flat">Cerrar</a>
         </div>
     </div>
     <!-- ++++++++++++++++++++++++++++ -->
 
-    <!-- ++++ Efecto Confeti ++++ -->
-    <canvas id="confeti"></canvas>
-
-    <div id="finScore" class="modal">
-        <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
+    <!-- ++++ Modal de Video Tip ++++ -->
+    <div class="modal" id="tipsM">
+        <div class="valign-wrapper title red darken-2">
+            <h3 class="left-align white-text">Tips</h3>
+            <i class="material-icons modal-close">close</i>
         </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        <div id="video">
+            <video id="vTutorial" controls>
+                <source src="../videos/video_01.mp4" type="video/mp4">
+            </video>
         </div>
     </div>
+    <!-- ++++++++++++++++++++++++++++ -->
+
+    <!-- ++++ Modal Score Final ++++ -->
+    <div id="finScore" class="modal">
+        <div class="valign-wrapper title">
+            <h3 class="left-align white-text">Puntuacion Final</h3>
+            <i class="material-icons modal-close">close</i>
+        </div>
+        <div class="modal-content">
+            <div class="row">
+                <div class="col m2 offset-m1">
+                    <img src="../img/icons/trofeo02.png" class="responsive-img">
+                </div>
+                <div class="col m8">
+                    <div class="card-panel red">
+                        <div class="row white-text valign-wrapper">
+                            <i class="material-icons small">account_circle</i>
+                            <h5 class="nombre"></h5>
+                        </div>
+                        <div class="row white-text valign-wrapper">
+                            <i class="material-icons small">grade</i>
+                            <h5>Puntuacion Final </h5>
+                            <h5 id="score" class="score">100000000</h5>
+                        </div>
+                        <div class="row white-text valign-wrapper">
+                            <i class="material-icons small">edit</i>
+                            <h5>Total Resueltas </h5>
+                            <h5 id="resueltas" class="resueltas">100</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ++++ Efecto Confeti ++++ -->
+    <canvas id="confeti"></canvas>
 
     <!-- ++++ Scripts ++++ -->
     <script>
@@ -222,9 +307,6 @@
     </script>
     <script>
         window.btn = require('../js/Events/btn.js')
-    </script>
-    <script>
-        require('../js/Equations/pasos.js')
     </script>
     <script>
         require('../js/renderProcess/render.js');

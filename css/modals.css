@@ -1,0 +1,143 @@
+/**** General para Modals ****/
+
+h3,
+span,
+h4,
+p,
+h5 {
+    cursor: default;
+}
+
+.modal {
+    border-radius: 0;
+}
+
+.title {
+    height: 20%;
+    width: 100%;
+}
+
+.modal .title i {
+    margin-top: -4%;
+    cursor: pointer;
+    margin-left: 77%;
+    color: white;
+}
+
+.modal .modal-content {
+    padding: 0;
+}
+
+
+/**** Solucion ****/
+
+#modalXp,
+#finScore {
+    height: 80% !important;
+}
+
+#modalXp>.modal-content>.row,
+#modalXp .m12 {
+    height: 100%;
+}
+
+#modalXp .modal-content {
+    height: 80%;
+}
+
+#modalXp .title i,
+#finScore .title i {
+    margin-top: -4%;
+    cursor: pointer;
+    color: white;
+    margin-left: 0;
+}
+
+#modalXp h3,
+#finScore h3 {
+    width: 90%;
+    font-size: 3em !important;
+}
+
+.panels {
+    height: calc(100% - 48px) !important;
+    padding-top: 1.5em !important;
+    background-color: #5F9EA0;
+}
+
+.panels .row .col {
+    padding: 0 .75rem !important;
+}
+
+.tabs .indicator {
+    background-color: rgb(154, 237, 34);
+}
+
+#modalXp .card-panel {
+    border-radius: 0;
+    background-color: #7B68EE;
+}
+
+
+/**** Modal Score Final ****/
+
+#finScore .title {
+    background-color: #FFA500;
+}
+
+#finScore .modal-content {
+    height: 80%;
+    background-color: #2C5871;
+}
+
+#finScore .modal-content .row .m2 {
+    padding-top: 13% !important;
+}
+
+#finScore .modal-content .row .m8 {
+    padding-top: 12% !important;
+    padding-left: 2% !important;
+}
+
+#finScore .modal-content .row .m8 i {
+    margin-right: 15px;
+}
+
+#finScore .modal-content .row .m8 .score,
+#finScore .modal-content .row .m8 .resueltas {
+    padding-left: 20px;
+}
+
+
+/**** Reproductor Video ****/
+
+#tipsM {
+    overflow-y: hidden;
+    background-color: transparent;
+    box-shadow: 0 0 0 0;
+}
+
+#tipsM i {
+    margin-top: -4%;
+    cursor: pointer;
+    margin-left: 77%;
+    color: white;
+}
+
+#tipsM .title {
+    height: 20%;
+    width: 100%;
+}
+
+#tipsM #video {
+    background-color: transparent;
+    height: 80%;
+    width: 100%
+}
+
+video {
+    width: 100%;
+}
+
+
+/**/

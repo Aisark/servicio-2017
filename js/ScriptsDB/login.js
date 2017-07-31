@@ -13,8 +13,6 @@ function logUSer(user, tipo) {
                 $('.progress').removeClass('hide')
                 setConfig(user, data)
                 db.close()
-                ipcRenderer.send('show-window', 0)
-                Materialize.toast('Bienvenido ' + user, 4000)
             } else {
                 Materialize.toast('Contraseña Incorrecta', 4000)
             }
@@ -33,7 +31,10 @@ function setConfig(user, data) {
     config.setItemObject(data.NOMBRE, 'userData', 'NOMBRE')
     config.setItemObject(data.AP_PAT, 'userData', 'AP_PAT')
     config.setItemObject(data.AP_MAT, 'userData', 'AP_MAT')
-    config.setObject()
+    config.setObject().then(function() {
+        ipcRenderer.send('show-window', 0)
+        Materialize.toast('Bienvenido ' + user, 4000)
+    })
 }
 
 function setTeachList() {
@@ -58,6 +59,8 @@ $('#passStu').keypress(function(event) {
     if (event.which == 13) {
         event.preventDefault()
         logUSer('Stu', 'ALUMNOS')
+    } else if (event.which == 9) {
+        event.preventDefault()
     }
 })
 
