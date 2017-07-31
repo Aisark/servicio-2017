@@ -23,7 +23,10 @@ function modals() {
             $('ul.tabs').tabs();
             solu.showContent()
         },
-        complete: function() { solu.reset() }
+        complete: function() {
+            solu.reset()
+            btn.updateEcua()
+        }
     })
 }
 
@@ -36,7 +39,7 @@ function loadObj() {
 function loadUser() {
     var obj = config.getItemObj('userData')
     var nombre = str.camelUp(obj['NOMBRE']) + str.camelUp(obj['AP_PAT']) + str.camelUp(obj['AP_MAT'])
-    $('#nombre').text(nombre)
+    $('.nombre').text(nombre)
 }
 
 $(document).ready(function() {
