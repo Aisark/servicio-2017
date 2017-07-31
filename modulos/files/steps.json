@@ -1,0 +1,22 @@
+{
+    "1": {
+        "tip1": "Esta es una ecuacion lineal de una sola variable",
+        "tip2": "Colocar en cualquier miembro de la ecuación a todos los terminos que contengan la variable",
+        "tip3": "Reducir terminos semejantes en ambos miembros de la ecuación",
+        "tip4": "Hacer las operaciones aritmeticas correspondientes"
+    },
+    "2": {
+        "tip1": "Esta es una ecuacion lineal de una sola variable",
+        "tip2": "Colocar en cualquier miembro de la ecuación a todos los terminos que contengan la variable",
+        "tip3": "Reducir terminos semejantes en ambos miembros de la ecuación",
+        "tip4": "Hacer las operaciones aritmeticas correspondientes",
+        "tip5": "Esta es una ecuacion lineal de una sola variable"
+    },
+    "3": {
+        "tip1": "Esta es una ecuacion lineal de una sola variable",
+        "tip2": "Colocar en cualquier miembro de la ecuación a todos los terminos que contengan la variable",
+        "tip3": "Reducir terminos semejantes en ambos miembros de la ecuación",
+        "tip4": "Hacer las operaciones aritmeticas correspondientes",
+        "tip5": "Colocar en cualquier miembro de la ecuación a todos los terminos que contengan la variable"
+    }
+}

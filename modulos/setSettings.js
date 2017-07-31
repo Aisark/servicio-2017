@@ -3,6 +3,8 @@ const jstorage = require('electron-json-storage');
 const path = require('path')
 const fs = require('fs');
 
+const stt = 'settings'
+const stp = 'steps'
 
 /**
  * @summary Set file settings.json
@@ -13,16 +15,16 @@ const fs = require('fs');
  * Copia un archivo json por deafult, y lo copia en un objeto javascript
  *
  * @param {obj} objeto javascript
-*/
-function setFileJSON() {
-  fs.readFile(path.join(__dirname,'files/settingsDefault.json'), 'utf8', function (err, data) {
-    if (err){
-      throw err
-    } else {
-      var obj = JSON.parse(data);
-      creatJSON(obj)
-    }
-  });
+ */
+function setFileJSON(file) {
+    fs.readFile(path.join(__dirname, 'files/' + file + '.json'), 'utf8', function(err, data) {
+        if (err) {
+            throw err
+        } else {
+            var obj = JSON.parse(data);
+            creatJSON(obj, file)
+        }
+    });
 }
 
 /**
@@ -35,13 +37,12 @@ function setFileJSON() {
  *
  * @param {obj} objeto javascript
  **/
-function creatJSON(obj) {
-  storage.set('storage/settings', obj)
-  .then(() => {
-  })
-  .catch(err => {
-    console.error(err);
-  });
+function creatJSON(obj, file) {
+    storage.set('storage/' + file, obj)
+        .then(() => {})
+        .catch(err => {
+            console.error(err);
+        });
 }
 
 /**
@@ -56,11 +57,15 @@ function creatJSON(obj) {
  *
  * @param {obj} objeto javascript
  **/
-module.exports = ()=>{
-  storage.isPathExists('storage/settings.json', (itDoes) => {
-    if (itDoes) {
-    }else {
-      setFileJSON()
-    }
-  });
+module.exports = () => {
+    storage.isPathExists('storage/' + stt + '.json', (itDoes) => {
+        if (itDoes) {} else {
+            setFileJSON(stt)
+        }
+    });
+    storage.isPathExists('storage/' + stp + '.json', (itDoes) => {
+        if (!itDoes) {
+            setFileJSON(stp)
+        }
+    });
 };

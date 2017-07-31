@@ -1,3 +1,7 @@
+const { ipcRenderer } = require('electron')
+const remote = require('electron').remote
+const path = require('path')
+const url = require('url')
 const res = require('../../js/Equations/resolucion.js')
 const confeti = require('../../js/Canvas/confeti.js')
 const config = require('../../modulos/config.js')
@@ -39,16 +43,18 @@ function effectSound(src, vol) {
 
 function init() {
     config.getOBjc().then(function() {
-        console.log();
         _src = (config.getItemObj('urlImg') == "") ? '../img/img-3.jpg' : config.getItemObj('urlImg')
         _img = new Image()
+        PUZZLE_DIFFICULTY = config.getItemObj('lvlPuzz')
         _img.addEventListener('load', onImage, false)
         _img.src = _src
+        _lvl = config.getItemObj('lvlEcua')
+        res.setEcuacion(_lvl)
     })
 }
 
 function onImage() {
-    PUZZLE_DIFFICULTY = config.getItemObj('lvlPuzz')
+    console.log('Dificultad ' + PUZZLE_DIFFICULTY);
     _pieceWidthImg = Math.floor(_img.width / PUZZLE_DIFFICULTY)
     _pieceHeightImg = Math.floor(_img.height / PUZZLE_DIFFICULTY)
     _pieceWidthCanvas = (_lienzo.scrollWidth - 80) / PUZZLE_DIFFICULTY
@@ -74,6 +80,7 @@ function initPuzzle() {
     _mouse = { x: 0, y: 0 };
     _currentPiece = null;
     _currentDropPiece = null;
+    console.log('Img complete ' + _Width + ':' + _puzzleWidth + ' ' + _Height + ':' + _puzzleHeight);
     _stage.drawImage(_img, 0, 0, _Width, _Height, 0, 0, _puzzleWidth, _puzzleHeight);
     createTitle("Click para Iniciar");
     buildPieces();
@@ -295,12 +302,19 @@ function gameOver() {
 function modalScoreFinal() {
     $(document).ready(function() {
         $('#finScore').modal({
-            inDuration: 300,
-            outDuration: 300,
+            opacity: .1,
             complete: function() {
-                confeti.stopConfeti()
+                var linkUrl = url.format({
+                    pathname: path.join(__dirname, '../../templates/index.html'),
+                    protocol: 'file:',
+                    slashes: true
+                })
+                $('.habilitado').addClass('desabilitado')
+                setTimeout(function() {
+                    ipcRenderer.send('load-page', linkUrl)
+                }, 2000)
             }
-        });
+        })
         $('#finScore').modal('open')
     })
 }

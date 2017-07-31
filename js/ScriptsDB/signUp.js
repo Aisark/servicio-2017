@@ -5,10 +5,13 @@ const config = require('../../modulos/config.js')
 var datos = ['', '', '', '', '', 'H', 0] //['nombre','apP','apM','user','pass','sexo',0]
 
 function setConf(data) {
-    config.setItemObject(data[3], 'userData', 'userName')
-    config.setItemObject(data[0], 'userData', 'name')
-    config.setItemObject(data[1], 'userData', 'lastName')
-    config.setObject()
+    config.setItemObject(data[3], 'userData', 'USERNAME')
+    config.setItemObject(data[0].toUpperCase(), 'userData', 'NOMBRE')
+    config.setItemObject(data[1].toUpperCase(), 'userData', 'AP_PAT')
+    config.setItemObject(data[2].toUpperCase(), 'userData', 'AP_MAT')
+    config.setObject().then(function() {
+        ipcRenderer.send('show-window', 0)
+    })
 }
 
 function getDataUser(item, index) {
@@ -93,7 +96,6 @@ function sendSignUp() {
                     $('.progress').removeClass('hide')
                     Materialize.toast('Usuario registrado', 4000)
                     db.close()
-                    ipcRenderer.send('show-window', 0)
                 })
                 setConf(datos)
             } else {

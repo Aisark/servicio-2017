@@ -5,8 +5,8 @@ const config = require('../../modulos/config.js')
 var _siguiente = document.getElementById('siguiente')
 var _tips = document.getElementById('tips')
 var _answer = document.getElementById('respuestas')
-var _resueltas = document.getElementById('resueltas')
-var _score = document.getElementById('score')
+var _resueltas = $('.resueltas')
+var _score = $('.score')
 var _intentos = document.getElementById('intentos')
 var _icono = document.getElementById('bien')
 var _efecto = document.getElementById('efecto')
@@ -36,7 +36,8 @@ function sendAnswer() {
  **/
 function checkAnswer() {
     var reciAns
-    var resl = (res.getData('c') / res.getData('x')).toFixed(2)
+    var solu = res.getData('res')
+    var resl = (solu[0] / solu[1]).toFixed(2)
     var ans = $('#respuestas').val()
 
     if (ans.includes('/')) {
@@ -44,10 +45,9 @@ function checkAnswer() {
         reciAns = (parseInt(divs[0]) / parseInt(divs[1])).toFixed(2)
     } else {
         reciAns = (parseFloat(ans)).toFixed(2)
-        console.log(reciAns + '=' + resl);
     }
 
-
+    console.log(reciAns + '=' + resl);
     return (resl == reciAns) ? true : false
 
 }
@@ -60,8 +60,8 @@ function updateCorrects() {
     res.modData('correct', 1)
     res.modData('global', 1)
     res.modData('score', 100)
-    _resueltas.innerHTML = res.getData('global')
-    _score.innerHTML = res.getData('score') + ' Exp'
+    _resueltas.text(res.getData('global'))
+    _score.text(res.getData('score') + ' Exp')
     updateErrors(0)
 }
 
@@ -168,7 +168,6 @@ function soundEffect(src) {
 $(document).ready(function() {
     config.getOBjc().then(function() {
         _lvl = config.getItemObj('lvlEcua')
-        res.setEcuacion(_lvl)
     })
 })
 

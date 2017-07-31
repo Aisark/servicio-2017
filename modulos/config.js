@@ -16,9 +16,10 @@ var object;
  *
  *
  **/
-exports.getOBjc = function() {
+exports.getOBjc = function(file) {
     return new Promise(function(resolve, reject) {
-        jstorage.get('settings', function(error, data) {
+        var arc = (file == undefined) ? 'settings' : file
+        jstorage.get(arc, function(error, data) {
             if (error) {
                 reject(error);
             }

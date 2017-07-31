@@ -92,6 +92,24 @@
 }
 
 
+/* Titulos Modal main.html */
+
+.modal h3 {
+    margin-left: 5%;
+    padding: 2% !important;
+    font-family: 'Mathematical';
+    font-size: 3.5em;
+    margin-bottom: 0;
+}
+
+#modalXp h5 {
+    font-family: 'Mathematical';
+    font-size: 3.5em;
+    text-shadow: .1em .1em 0.2em rgba(0, 0, 0, 1);
+    color: #cddc39;
+}
+
+
 /* Titulo de la pantalla inicial */
 
 #banner {
