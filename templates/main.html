@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="../css/animate.css">
 </head>
 
-<body>
+<body class="habilitado">
     <!-- ++++ Indefinido ++++ -->
     <div class="row" id="f1">
         <nav>
             <div class="nav-wrapper redBack">
                 <ul class="right">
                     <li><a id="minimizar"><i class="material-icons">remove</i></a></li>
-                    <li class="hide"><a id="reload"><i class="material-icons">refresh</i></a></li>
+                    <li><a href="#finScore"><i class="material-icons">refresh</i></a></li>
                     <li><a id="closeBrows"><i class="material-icons">close</i></a></li>
                 </ul>
             </div>
@@ -76,12 +76,11 @@
                 <div class="col m6 s6">
                     <div class="card-panels white-text">
                         <div class="valign-wrapper">
-                            <h5 id="nombre"></h5>
-                            <h5 id="semestre">6 sem.</h5>
+                            <h5 id="nombre" class="nombre"></h5>
                         </div>
                         <div class="valign-wrapper">
                             <h5 id="lblRes">Total Resueltas:</h5>
-                            <h5 id="resueltas">00</h5>
+                            <h5 id="resueltas" class="resueltas">00</h5>
                         </div>
                     </div>
                 </div>
@@ -89,7 +88,7 @@
                     <div class="card-panels white-text">
                         <div class="valign-wrapper">
                             <h4>Score :</h4>
-                            <h4 id="score">00 Exp</h4>
+                            <h4 id="score" class="score">00 Exp</h4>
                         </div>
                         <div class="valign-wrapper">
                             <h4>Movimientos:</h4>
@@ -257,18 +256,41 @@
     </div>
     <!-- ++++++++++++++++++++++++++++ -->
 
-    <!-- ++++ Efecto Confeti ++++ -->
-    <canvas id="confeti"></canvas>
-
+    <!-- ++++ Modal Score Final ++++ -->
     <div id="finScore" class="modal">
-        <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
+        <div class="valign-wrapper title">
+            <h3 class="left-align white-text">Puntuacion Final</h3>
+            <i class="material-icons modal-close">close</i>
         </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        <div class="modal-content">
+            <div class="row">
+                <div class="col m2 offset-m1">
+                    <img src="../img/icons/trofeo02.png" class="responsive-img">
+                </div>
+                <div class="col m8">
+                    <div class="card-panel red">
+                        <div class="row white-text valign-wrapper">
+                            <i class="material-icons small">account_circle</i>
+                            <h5 class="nombre"></h5>
+                        </div>
+                        <div class="row white-text valign-wrapper">
+                            <i class="material-icons small">grade</i>
+                            <h5>Puntuacion Final </h5>
+                            <h5 id="score" class="score">100000000</h5>
+                        </div>
+                        <div class="row white-text valign-wrapper">
+                            <i class="material-icons small">edit</i>
+                            <h5>Total Resueltas </h5>
+                            <h5 id="resueltas" class="resueltas">100</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- ++++ Efecto Confeti ++++ -->
+    <canvas id="confeti"></canvas>
 
     <!-- ++++ Scripts ++++ -->
     <script>
