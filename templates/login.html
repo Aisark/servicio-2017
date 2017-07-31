@@ -1,211 +1,228 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-    <link href="../materialize/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <link href="../materialize/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/login.css">
-  </head>
-  <body>
+</head>
+
+<body class="habilitado">
 
     <div class="row" id="btnCR">
-      <nav>
-        <div class="nav-wrapper redBack">
-          <ul class="right">
-            <li><a id="minimizar"><i class="material-icons">remove</i></a></li>
-            <li class="hide"><a id="reload"><i class="material-icons">refresh</i></a></li>
-            <li><a id="closeBrows"><i class="material-icons">close</i></a></li>
-          </ul>
-        </div>
-      </nav>
+        <nav>
+            <div class="nav-wrapper redBack">
+                <ul class="right">
+                    <li><a id="minimizar"><i class="material-icons">remove</i></a></li>
+                    <li class="hide"><a id="reload"><i class="material-icons">refresh</i></a></li>
+                    <li><a id="closeBrows"><i class="material-icons">close</i></a></li>
+                </ul>
+            </div>
+        </nav>
     </div>
 
     <div class="row nav-content habilitado" id="tabs">
-      <ul id="tabsSwipe" class="tabs light-blue darken-2 white-text redBack">
-        <li class="tab col s4 redBack"><a class="active" href="#tabStudents">Alumnos</a></li>
-        <li class="tab col s4 redBack"><a href="#tabTeacher">Maestros</a></li>
-        <li class="tab col s4 redBack"><a href="#tabSingUp">Registrarse</a></li>
-      </ul>
-      <div class="progress yellow lighten-5 hide">
-        <div class="indeterminate yellow accent-3"></div>
-      </div>
-      <div id="tabStudents" class="col s12 blueBack tabla">
-        <div class="row imgRow">
-          <img src="../img/icons/student_00.png" class="responsive-img">
+        <ul id="tabsSwipe" class="tabs light-blue darken-2 white-text redBack">
+            <li class="tab col s4 redBack"><a class="active" href="#tabStudents">Alumnos</a></li>
+            <li class="tab col s4 redBack"><a href="#tabTeacher">Maestros</a></li>
+            <li class="tab col s4 redBack"><a href="#tabSingUp">Registrarse</a></li>
+        </ul>
+        <div class="progress yellow lighten-5 hide">
+            <div class="indeterminate yellow accent-3"></div>
         </div>
-        <div class="row formRow">
-          <div class="col m6 offset-m3">
-            <div class="card">
-              <div class="card-content">
-                <div class="row">
-                  <form class="col m12">
-                    <div class="row">
-                      <div class="input-field col m12">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input type="text" class="validate" id="userStu">
-                        <label for="userStu">Usuario</label>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="input-field col m12">
-                        <i class="material-icons prefix">lock_outline</i>
-                        <input minlength="8" maxlength="15" type="password" class="validate" id="passStu">
-                        <label data-error="incompleto" for="passStu">Contraseña</label>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-              <div class="card-action">
-                <div class="center">
-                  <a id="senStuden">Ingresar</a>
-                  <a class="regUser">Registrarse</a>
-                </div>
-              </div>
+        <div id="tabStudents" class="col s12 blueBack tabla">
+            <div class="row imgRow">
+                <img src="../img/icons/student_00.png" class="responsive-img">
             </div>
-          </div>
-        </div>
-      </div>
-      <div id="tabTeacher" class="col s12 blueBack  tabla">
-        <div class="row imgRow">
-          <img src="../img/icons/teach_01.png" class="responsive-img">
-        </div>
-        <div class="row formRow">
-          <div class="col m6 offset-m3">
-            <div class="card">
-              <div class="card-content">
-                <div class="row">
-                  <form class="col m12">
-                    <div class="row">
-                      <div class="input-field col m12">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input type="text" class="validate" id="userTeach">
-                        <label for="userTeach">Usuario</label>
-                      </div>
+            <div class="row formRow">
+                <div class="col m6 offset-m3">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="row">
+                                <form class="col m12">
+                                    <div class="row">
+                                        <div class="input-field col m12">
+                                            <i class="material-icons prefix">account_circle</i>
+                                            <input type="text" class="validate" id="userStu">
+                                            <label for="userStu">Usuario</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col m12">
+                                            <i class="material-icons prefix">lock_outline</i>
+                                            <input minlength="8" maxlength="15" type="password" class="validate" id="passStu">
+                                            <label data-error="incompleto" for="passStu">Contraseña</label>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <div class="center">
+                                <a id="senStuden">Ingresar</a>
+                                <a class="regUser">Registrarse</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="row">
-                      <div class="input-field col m12">
-                        <i class="material-icons prefix">lock_outline</i>
-                        <input minlength="8" maxlength="15" type="password" class="validate" id="passTeach">
-                        <label data-error="incompleto" for="passTeach">Contraseña</label>
-                      </div>
-                    </div>
-                  </form>
                 </div>
-              </div>
-              <div class="card-action">
-                <div class="center">
-                  <a id="sendMa">Ingresar</a>
-                  <a class="regUser">Registrarse</a>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div id="tabSingUp" class="col s12 blueBack tabla">
-        <div class="row imgRow">
-          <img src="../img/icons/sing_up_01.png" class="responsive-img">
+        <div id="tabTeacher" class="col s12 blueBack  tabla">
+            <div class="row imgRow">
+                <img src="../img/icons/teach_01.png" class="responsive-img">
+            </div>
+            <div class="row formRow">
+                <div class="col m6 offset-m3">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="row">
+                                <form class="col m12">
+                                    <div class="row">
+                                        <div class="input-field col m12">
+                                            <i class="material-icons prefix">account_circle</i>
+                                            <input type="text" class="validate" id="userTeach">
+                                            <label for="userTeach">Usuario</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col m12">
+                                            <i class="material-icons prefix">lock_outline</i>
+                                            <input minlength="8" maxlength="15" type="password" class="validate" id="passTeach">
+                                            <label data-error="incompleto" for="passTeach">Contraseña</label>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <div class="center">
+                                <a id="sendMa">Ingresar</a>
+                                <a class="regUser">Registrarse</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row formRow">
-          <div class="col m10 offset-m1">
-            <div class="card">
-              <div class="card-content">
-                <div class="row">
-                  <form class="col m12">
-                    <div class="row" id="namesSign">
-                      <div class="col m4 input-field">
-                        <i class="material-icons prefix">person</i>
-                        <input type="text" class="validate uppercase" id="nameUs">
-                        <label for="nameUs">Nombre</label>
-                      </div>
-                      <div class="col m4 input-field">
-                        <input type="text" class="validate uppercase" id="appUs">
-                        <label for="appUs">Apellido Paterno</label>
-                      </div>
-                      <div class="col m4 input-field">
-                        <input type="text" class="validate uppercase" id="apmUs">
-                        <label for="apmUs">Apellido Materno</label>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col m4 input-field">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input type="text" class="validate" id="nickUs">
-                        <label for="nickUs">Usuario</label>
-                      </div>
-                      <div class="col m4 input-field">
-                        <i class="material-icons prefix">lock_outline</i>
-                        <input minlength="8" maxlength="15" type="password" class="validate" id="passUs">
-                        <label data-error="incompleto" for="passUs">Contraseña</label>
-                      </div>
-                      <div class="col m4 input-field">
-                        <input minlength="8" maxlength="15" type="password" class="validate" id="cpassUs">
-                        <label data-error="incompleto" for="cpassUs">Confirmar Contraseña</label>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col m1">
-                        <i class="material-icons" style="font-size:2.5em">wc</i>
-                      </div>
-                      <div class="col m2">
-                        <p>
-                          <input value="H" name="sexo" type="radio" id="hom" checked/>
-                          <label for="hom">Hombre</label>
-                        </p>
-                        <p>
-                          <input value="M" name="sexo" type="radio" id="muj" />
-                          <label for="muj">Mujer</label>
-                        </p>
-                      </div>
-                      <div class="input-field col m3">
-                        <select id="selMaes">
+        <div id="tabSingUp" class="col s12 blueBack tabla">
+            <div class="row imgRow">
+                <img src="../img/icons/sing_up_01.png" class="responsive-img">
+            </div>
+            <div class="row formRow">
+                <div class="col m10 offset-m1">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="row">
+                                <form class="col m12">
+                                    <div class="row" id="namesSign">
+                                        <div class="col m4 input-field">
+                                            <i class="material-icons prefix">person</i>
+                                            <input type="text" class="validate uppercase" id="nameUs">
+                                            <label for="nameUs">Nombre</label>
+                                        </div>
+                                        <div class="col m4 input-field">
+                                            <input type="text" class="validate uppercase" id="appUs">
+                                            <label for="appUs">Apellido Paterno</label>
+                                        </div>
+                                        <div class="col m4 input-field">
+                                            <input type="text" class="validate uppercase" id="apmUs">
+                                            <label for="apmUs">Apellido Materno</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col m4 input-field">
+                                            <i class="material-icons prefix">account_circle</i>
+                                            <input type="text" class="validate" id="nickUs">
+                                            <label for="nickUs">Usuario</label>
+                                        </div>
+                                        <div class="col m4 input-field">
+                                            <i class="material-icons prefix">lock_outline</i>
+                                            <input minlength="8" maxlength="15" type="password" class="validate" id="passUs">
+                                            <label data-error="incompleto" for="passUs">Contraseña</label>
+                                        </div>
+                                        <div class="col m4 input-field">
+                                            <input minlength="8" maxlength="15" type="password" class="validate" id="cpassUs">
+                                            <label data-error="incompleto" for="cpassUs">Confirmar Contraseña</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col m1">
+                                            <i class="material-icons" style="font-size:2.5em">wc</i>
+                                        </div>
+                                        <div class="col m2">
+                                            <p>
+                                                <input value="H" name="sexo" type="radio" id="hom" checked/>
+                                                <label for="hom">Hombre</label>
+                                            </p>
+                                            <p>
+                                                <input value="M" name="sexo" type="radio" id="muj" />
+                                                <label for="muj">Mujer</label>
+                                            </p>
+                                        </div>
+                                        <div class="input-field col m3">
+                                            <select id="selMaes">
                           <option value="" disabled selected>Elegir opciones ...</option>
                         </select>
-                        <label>Maestro</label>
-                      </div>
-                      <div class="col m3 input-field">
-                        <i class="material-icons prefix">enhanced_encryption</i>
-                        <input disabled type="text" class="validate" id="codConf">
-                        <label for="codConf">Num. Control</label>
-                      </div>
-                      <div class="col m1">
-                        <i class="material-icons" style="font-size:2.5em">group</i>
-                      </div>
-                      <div class="col m2">
-                        <p>
-                          <input value="ALUMNOS" name="tipoUser" type="radio" id="alumno" checked/>
-                          <label for="alumno">Alumno</label>
-                        </p>
-                        <p>
-                          <input value="MAESTROS" name="tipoUser" type="radio" id="maestro"/>
-                          <label for="maestro">Maestros</label>
-                        </p>
-                      </div>
+                                            <label>Maestro</label>
+                                        </div>
+                                        <div class="col m3 input-field">
+                                            <i class="material-icons prefix">enhanced_encryption</i>
+                                            <input disabled type="text" class="validate" id="codConf">
+                                            <label for="codConf">Num. Control</label>
+                                        </div>
+                                        <div class="col m1">
+                                            <i class="material-icons" style="font-size:2.5em">group</i>
+                                        </div>
+                                        <div class="col m2">
+                                            <p>
+                                                <input value="ALUMNOS" name="tipoUser" type="radio" id="alumno" checked/>
+                                                <label for="alumno">Alumno</label>
+                                            </p>
+                                            <p>
+                                                <input value="MAESTROS" name="tipoUser" type="radio" id="maestro" />
+                                                <label for="maestro">Maestros</label>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <div class="center">
+                                <a id="sendSign">Registrarse</a>
+                            </div>
+                        </div>
                     </div>
-                  </form>
                 </div>
-              </div>
-              <div class="card-action">
-                <div class="center">
-                  <a id="sendSign">Registrarse</a>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
 
-    <script>window.$ = window.jQuery = require('jquery');</script>
-    <script>window.$.Velocity=window.jQuery.Velocity=require("materialize-css/js/velocity.min.js");</script>
-    <script>require('../materialize/js/materialize.min.js')</script>
-    <script>require('../js/renderProcess/render.js')</script>
-    <script>require('../js/Events/initLog.js')</script>
+    <script>
+        window.$ = window.jQuery = require('jquery');
+    </script>
+    <script>
+        window.$.Velocity = window.jQuery.Velocity = require("materialize-css/js/velocity.min.js");
+    </script>
+    <script>
+        require('../materialize/js/materialize.min.js')
+    </script>
+    <script>
+        require('../js/renderProcess/render.js')
+    </script>
+    <script>
+        require('../js/Events/initLog.js')
+    </script>
     <script></script>
-    <script>require('../js/ScriptsDB/login.js')</script>
-    <script>require('../js/ScriptsDB/signUp.js')</script>
-  </body>
+    <script>
+        require('../js/ScriptsDB/login.js')
+    </script>
+    <script>
+        require('../js/ScriptsDB/signUp.js')
+    </script>
+</body>
+
 </html>
