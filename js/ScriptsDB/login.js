@@ -59,6 +59,8 @@ $('#passStu').keypress(function(event) {
     if (event.which == 13) {
         event.preventDefault()
         logUSer('Stu', 'ALUMNOS')
+    } else if (event.which == 9) {
+        event.preventDefault()
     }
 })
 
