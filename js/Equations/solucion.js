@@ -33,6 +33,7 @@ function setTips(type) {
                 $(this).text(txt)
             })
         }
+        resolve()
     });
 }
 

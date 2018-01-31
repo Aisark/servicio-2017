@@ -3,7 +3,7 @@ const rebuild = require('electron-rebuild')
 const copy = require('copy')
 
 var options = {
-    arch: 'ia32',
+    arch: 'ia32,x64',
     platform: 'win32',
     dir: './',
     appVersion: '0.1.0',
